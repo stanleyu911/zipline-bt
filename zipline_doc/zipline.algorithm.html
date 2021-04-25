@@ -1,0 +1,1183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module zipline.algorithm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="zipline.html"><font color="#ffffff">zipline</font></a>.algorithm</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cstanley%5Canaconda3%5Cenvs%5Czipline_36%5Clib%5Csite-packages%5Czipline%5Calgorithm.py">c:\users\stanley\anaconda3\envs\zipline_36\lib\site-packages\zipline\algorithm.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Copyright&nbsp;2015&nbsp;Quantopian,&nbsp;Inc.<br>
+#<br>
+#&nbsp;Licensed&nbsp;under&nbsp;the&nbsp;Apache&nbsp;License,&nbsp;Version&nbsp;2.0&nbsp;(the&nbsp;"License");<br>
+#&nbsp;you&nbsp;may&nbsp;not&nbsp;use&nbsp;this&nbsp;file&nbsp;except&nbsp;in&nbsp;compliance&nbsp;with&nbsp;the&nbsp;License.<br>
+#&nbsp;You&nbsp;may&nbsp;obtain&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;License&nbsp;at<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a><br>
+#<br>
+#&nbsp;Unless&nbsp;required&nbsp;by&nbsp;applicable&nbsp;law&nbsp;or&nbsp;agreed&nbsp;to&nbsp;in&nbsp;writing,&nbsp;software<br>
+#&nbsp;distributed&nbsp;under&nbsp;the&nbsp;License&nbsp;is&nbsp;distributed&nbsp;on&nbsp;an&nbsp;"AS&nbsp;IS"&nbsp;BASIS,<br>
+#&nbsp;WITHOUT&nbsp;WARRANTIES&nbsp;OR&nbsp;CONDITIONS&nbsp;OF&nbsp;ANY&nbsp;KIND,&nbsp;either&nbsp;express&nbsp;or&nbsp;implied.<br>
+#&nbsp;See&nbsp;the&nbsp;License&nbsp;for&nbsp;the&nbsp;specific&nbsp;language&nbsp;governing&nbsp;permissions&nbsp;and<br>
+#&nbsp;limitations&nbsp;under&nbsp;the&nbsp;License.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="zipline.pipeline.domain.html">zipline.pipeline.domain</a><br>
+<a href="logbook.html">logbook</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="pytz.html">pytz</a><br>
+<a href="warnings.html">warnings</a><br>
+</td><td width="25%" valign=top><a href="zipline.html">zipline</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#ValueError">builtins.ValueError</a>(<a href="builtins.html#Exception">builtins.Exception</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.algorithm.html#NoBenchmark">NoBenchmark</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.algorithm.html#TradingAlgorithm">TradingAlgorithm</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#tuple">builtins.tuple</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.algorithm.html#AttachedPipeline">AttachedPipeline</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="AttachedPipeline">class <strong>AttachedPipeline</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#AttachedPipeline">AttachedPipeline</a>(pipe,&nbsp;chunks,&nbsp;eager)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.algorithm.html#AttachedPipeline">AttachedPipeline</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="AttachedPipeline-__getnewargs__"><strong>__getnewargs__</strong></a>(self)</dt><dd><tt>Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-_asdict"><strong>_asdict</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;new&nbsp;OrderedDict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-_replace"><strong>_replace</strong></a>(_self, **kwds)</dt><dd><tt>Return&nbsp;a&nbsp;new&nbsp;<a href="#AttachedPipeline">AttachedPipeline</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="AttachedPipeline-_make"><strong>_make</strong></a>(iterable, new=&lt;built-in method __new__ of type object at 0x0000000075AA1A50&gt;, len=&lt;built-in function len&gt;)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Make&nbsp;a&nbsp;new&nbsp;<a href="#AttachedPipeline">AttachedPipeline</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="AttachedPipeline-__new__"><strong>__new__</strong></a>(_cls, pipe, chunks, eager)</dt><dd><tt>Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#AttachedPipeline">AttachedPipeline</a>(pipe,&nbsp;chunks,&nbsp;eager)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>pipe</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</tt></dd>
+</dl>
+<dl><dt><strong>chunks</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</tt></dd>
+</dl>
+<dl><dt><strong>eager</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>_fields</strong> = ('pipe', 'chunks', 'eager')</dl>
+
+<dl><dt><strong>_source</strong> = "from builtins import property as _property, tupl..._itemgetter(2), doc='Alias for field number 2')<font color="#c040c0">\n\n</font>"</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="AttachedPipeline-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self+value.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;key&nbsp;in&nbsp;self.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;self[key].</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><tt>Implement&nbsp;iter(self).</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;len(self).</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self*value.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value*self.</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-count"><strong>count</strong></a>(...)</dt><dd><tt>T.<a href="#AttachedPipeline-count">count</a>(value)&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="AttachedPipeline-index"><strong>index</strong></a>(...)</dt><dd><tt>T.<a href="#AttachedPipeline-index">index</a>(value,&nbsp;[start,&nbsp;[stop]])&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+Raises&nbsp;<a href="builtins.html#ValueError">ValueError</a>&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NoBenchmark">class <strong>NoBenchmark</strong></a>(<a href="builtins.html#ValueError">builtins.ValueError</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Inappropriate&nbsp;argument&nbsp;value&nbsp;(of&nbsp;correct&nbsp;type).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.algorithm.html#NoBenchmark">NoBenchmark</a></dd>
+<dd><a href="builtins.html#ValueError">builtins.ValueError</a></dd>
+<dd><a href="builtins.html#Exception">builtins.Exception</a></dd>
+<dd><a href="builtins.html#BaseException">builtins.BaseException</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="NoBenchmark-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="builtins.html#ValueError">builtins.ValueError</a>:<br>
+<dl><dt><a name="NoBenchmark-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><a name="NoBenchmark-__delattr__"><strong>__delattr__</strong></a>(self, name, /)</dt><dd><tt>Implement&nbsp;delattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="NoBenchmark-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="NoBenchmark-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>helper&nbsp;for&nbsp;pickle</tt></dd></dl>
+
+<dl><dt><a name="NoBenchmark-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="NoBenchmark-__setattr__"><strong>__setattr__</strong></a>(self, name, value, /)</dt><dd><tt>Implement&nbsp;setattr(self,&nbsp;name,&nbsp;value).</tt></dd></dl>
+
+<dl><dt><a name="NoBenchmark-__setstate__"><strong>__setstate__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="NoBenchmark-__str__"><strong>__str__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="NoBenchmark-with_traceback"><strong>with_traceback</strong></a>(...)</dt><dd><tt>Exception.<a href="#NoBenchmark-with_traceback">with_traceback</a>(tb)&nbsp;--<br>
+set&nbsp;self.<strong>__traceback__</strong>&nbsp;to&nbsp;tb&nbsp;and&nbsp;return&nbsp;self.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="builtins.html#BaseException">builtins.BaseException</a>:<br>
+<dl><dt><strong>__cause__</strong></dt>
+<dd><tt>exception&nbsp;cause</tt></dd>
+</dl>
+<dl><dt><strong>__context__</strong></dt>
+<dd><tt>exception&nbsp;context</tt></dd>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__suppress_context__</strong></dt>
+</dl>
+<dl><dt><strong>__traceback__</strong></dt>
+</dl>
+<dl><dt><strong>args</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TradingAlgorithm">class <strong>TradingAlgorithm</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;that&nbsp;represents&nbsp;a&nbsp;trading&nbsp;strategy&nbsp;and&nbsp;parameters&nbsp;to&nbsp;execute<br>
+the&nbsp;strategy.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+*args,&nbsp;**kwargs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Forwarded&nbsp;to&nbsp;``initialize``&nbsp;unless&nbsp;listed&nbsp;below.<br>
+initialize&nbsp;:&nbsp;callable[context&nbsp;-&gt;&nbsp;None],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Function&nbsp;that&nbsp;is&nbsp;called&nbsp;at&nbsp;the&nbsp;start&nbsp;of&nbsp;the&nbsp;simulation&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;setup&nbsp;the&nbsp;initial&nbsp;context.<br>
+handle_data&nbsp;:&nbsp;callable[(context,&nbsp;data)&nbsp;-&gt;&nbsp;None],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Function&nbsp;called&nbsp;on&nbsp;every&nbsp;bar.&nbsp;This&nbsp;is&nbsp;where&nbsp;most&nbsp;logic&nbsp;should&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;implemented.<br>
+before_trading_start&nbsp;:&nbsp;callable[(context,&nbsp;data)&nbsp;-&gt;&nbsp;None],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Function&nbsp;that&nbsp;is&nbsp;called&nbsp;before&nbsp;any&nbsp;bars&nbsp;have&nbsp;been&nbsp;processed&nbsp;each<br>
+&nbsp;&nbsp;&nbsp;&nbsp;day.<br>
+analyze&nbsp;:&nbsp;callable[(context,&nbsp;DataFrame)&nbsp;-&gt;&nbsp;None],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Function&nbsp;that&nbsp;is&nbsp;called&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;backtest.&nbsp;This&nbsp;is&nbsp;passed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;context&nbsp;and&nbsp;the&nbsp;performance&nbsp;results&nbsp;for&nbsp;the&nbsp;backtest.<br>
+script&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Algoscript&nbsp;that&nbsp;contains&nbsp;the&nbsp;definitions&nbsp;for&nbsp;the&nbsp;four&nbsp;algorithm<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lifecycle&nbsp;functions&nbsp;and&nbsp;any&nbsp;supporting&nbsp;code.<br>
+namespace&nbsp;:&nbsp;dict,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;namespace&nbsp;to&nbsp;execute&nbsp;the&nbsp;algoscript&nbsp;in.&nbsp;By&nbsp;default&nbsp;this&nbsp;is&nbsp;an<br>
+&nbsp;&nbsp;&nbsp;&nbsp;empty&nbsp;namespace&nbsp;that&nbsp;will&nbsp;include&nbsp;only&nbsp;python&nbsp;built&nbsp;ins.<br>
+algo_filename&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;filename&nbsp;for&nbsp;the&nbsp;algoscript.&nbsp;This&nbsp;will&nbsp;be&nbsp;used&nbsp;in&nbsp;exception<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tracebacks.&nbsp;default:&nbsp;'&lt;string&gt;'.<br>
+data_frequency&nbsp;:&nbsp;{'daily',&nbsp;'minute'},&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;duration&nbsp;of&nbsp;the&nbsp;bars.<br>
+equities_metadata&nbsp;:&nbsp;dict&nbsp;or&nbsp;DataFrame&nbsp;or&nbsp;file-like&nbsp;<a href="builtins.html#object">object</a>,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;dict&nbsp;is&nbsp;provided,&nbsp;it&nbsp;must&nbsp;have&nbsp;the&nbsp;following&nbsp;structure:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;keys&nbsp;are&nbsp;the&nbsp;identifiers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;values&nbsp;are&nbsp;dicts&nbsp;containing&nbsp;the&nbsp;metadata,&nbsp;with&nbsp;the&nbsp;metadata<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field&nbsp;name&nbsp;as&nbsp;the&nbsp;key<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;pandas.DataFrame&nbsp;is&nbsp;provided,&nbsp;it&nbsp;must&nbsp;have&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;following&nbsp;structure:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;column&nbsp;names&nbsp;must&nbsp;be&nbsp;the&nbsp;metadata&nbsp;fields<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;index&nbsp;must&nbsp;be&nbsp;the&nbsp;different&nbsp;asset&nbsp;identifiers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;array&nbsp;contents&nbsp;should&nbsp;be&nbsp;the&nbsp;metadata&nbsp;value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;an&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;a&nbsp;``read``&nbsp;method&nbsp;is&nbsp;provided,&nbsp;``read``&nbsp;must<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;rows&nbsp;containing&nbsp;at&nbsp;least&nbsp;one&nbsp;of&nbsp;'sid'&nbsp;or&nbsp;'symbol'&nbsp;along<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;the&nbsp;other&nbsp;metadata&nbsp;fields.<br>
+futures_metadata&nbsp;:&nbsp;dict&nbsp;or&nbsp;DataFrame&nbsp;or&nbsp;file-like&nbsp;<a href="builtins.html#object">object</a>,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;same&nbsp;layout&nbsp;as&nbsp;``equities_metadata``&nbsp;except&nbsp;that&nbsp;it&nbsp;is&nbsp;used<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;futures&nbsp;information.<br>
+identifiers&nbsp;:&nbsp;list,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Any&nbsp;asset&nbsp;identifiers&nbsp;that&nbsp;are&nbsp;not&nbsp;provided&nbsp;in&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;equities_metadata,&nbsp;but&nbsp;will&nbsp;be&nbsp;traded&nbsp;by&nbsp;this&nbsp;<a href="#TradingAlgorithm">TradingAlgorithm</a>.<br>
+get_pipeline_loader&nbsp;:&nbsp;callable[BoundColumn&nbsp;-&gt;&nbsp;PipelineLoader],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;function&nbsp;that&nbsp;maps&nbsp;pipeline&nbsp;columns&nbsp;to&nbsp;their&nbsp;loaders.<br>
+create_event_context&nbsp;:&nbsp;callable[BarData&nbsp;-&gt;&nbsp;context&nbsp;manager],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;function&nbsp;used&nbsp;to&nbsp;create&nbsp;a&nbsp;context&nbsp;mananger&nbsp;that&nbsp;wraps&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;execution&nbsp;of&nbsp;all&nbsp;events&nbsp;that&nbsp;are&nbsp;scheduled&nbsp;for&nbsp;a&nbsp;bar.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;function&nbsp;will&nbsp;be&nbsp;passed&nbsp;the&nbsp;data&nbsp;for&nbsp;the&nbsp;bar&nbsp;and&nbsp;should<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;the&nbsp;actual&nbsp;context&nbsp;manager&nbsp;that&nbsp;will&nbsp;be&nbsp;entered.<br>
+history_container_class&nbsp;:&nbsp;type,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;of&nbsp;history&nbsp;container&nbsp;to&nbsp;use.&nbsp;default:&nbsp;HistoryContainer<br>
+platform&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;platform&nbsp;the&nbsp;simulation&nbsp;is&nbsp;running&nbsp;on.&nbsp;This&nbsp;can&nbsp;be&nbsp;queried&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;simulation&nbsp;with&nbsp;``get_environment``.&nbsp;This&nbsp;allows&nbsp;algorithms<br>
+&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;conditionally&nbsp;execute&nbsp;code&nbsp;based&nbsp;on&nbsp;platform&nbsp;it&nbsp;is&nbsp;running&nbsp;on.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default:&nbsp;'zipline'<br>
+adjustment_reader&nbsp;:&nbsp;AdjustmentReader<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;interface&nbsp;to&nbsp;the&nbsp;adjustments.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="TradingAlgorithm-__init__"><strong>__init__</strong></a>(self, sim_params, data_portal=None, asset_finder=None, namespace=None, script=None, algo_filename=None, initialize=None, handle_data=None, before_trading_start=None, analyze=None, trading_calendar=None, metrics_set=None, blotter=None, blotter_class=None, cancel_policy=None, benchmark_sid=None, benchmark_returns=None, platform='zipline', capital_changes=None, get_pipeline_loader=None, create_event_context=None, **initialize_kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>N.B.&nbsp;this&nbsp;does&nbsp;not&nbsp;yet&nbsp;represent&nbsp;a&nbsp;string&nbsp;that&nbsp;can&nbsp;be&nbsp;used<br>
+to&nbsp;instantiate&nbsp;an&nbsp;exact&nbsp;copy&nbsp;of&nbsp;an&nbsp;algorithm.<br>
+&nbsp;<br>
+However,&nbsp;it&nbsp;is&nbsp;getting&nbsp;close,&nbsp;and&nbsp;provides&nbsp;some&nbsp;value&nbsp;as&nbsp;something<br>
+that&nbsp;can&nbsp;be&nbsp;inspected&nbsp;interactively.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-add_event"><strong>add_event</strong></a>(self, rule, callback)</dt><dd><tt>Adds&nbsp;an&nbsp;event&nbsp;to&nbsp;the&nbsp;algorithm's&nbsp;EventManager.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+rule&nbsp;:&nbsp;EventRule<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;rule&nbsp;for&nbsp;when&nbsp;the&nbsp;callback&nbsp;should&nbsp;be&nbsp;triggered.<br>
+callback&nbsp;:&nbsp;callable[(context,&nbsp;data)&nbsp;-&gt;&nbsp;None]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;function&nbsp;to&nbsp;execute&nbsp;when&nbsp;the&nbsp;rule&nbsp;is&nbsp;triggered.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-analyze"><strong>analyze</strong></a>(self, perf)</dt></dl>
+
+<dl><dt><a name="TradingAlgorithm-attach_pipeline"><strong>attach_pipeline</strong></a>(self, pipeline, name, chunks=None, eager=True)</dt><dd><tt>Register&nbsp;a&nbsp;pipeline&nbsp;to&nbsp;be&nbsp;computed&nbsp;at&nbsp;the&nbsp;start&nbsp;of&nbsp;each&nbsp;day.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+pipeline&nbsp;:&nbsp;Pipeline<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;pipeline&nbsp;to&nbsp;have&nbsp;computed.<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;pipeline.<br>
+chunks&nbsp;:&nbsp;int&nbsp;or&nbsp;iterator,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;days&nbsp;to&nbsp;compute&nbsp;pipeline&nbsp;results&nbsp;for.&nbsp;Increasing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;number&nbsp;will&nbsp;make&nbsp;it&nbsp;longer&nbsp;to&nbsp;get&nbsp;the&nbsp;first&nbsp;results&nbsp;but<br>
+&nbsp;&nbsp;&nbsp;&nbsp;may&nbsp;improve&nbsp;the&nbsp;total&nbsp;runtime&nbsp;of&nbsp;the&nbsp;simulation.&nbsp;If&nbsp;an&nbsp;iterator<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;passed,&nbsp;we&nbsp;will&nbsp;run&nbsp;in&nbsp;chunks&nbsp;based&nbsp;on&nbsp;values&nbsp;of&nbsp;the&nbsp;iterator.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Default&nbsp;is&nbsp;True.<br>
+eager&nbsp;:&nbsp;bool,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Whether&nbsp;or&nbsp;not&nbsp;to&nbsp;compute&nbsp;this&nbsp;pipeline&nbsp;prior&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;before_trading_start.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+pipeline&nbsp;:&nbsp;Pipeline<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;pipeline&nbsp;that&nbsp;was&nbsp;attached&nbsp;unchanged.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`zipline.api.pipeline_output`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-batch_market_order"><strong>batch_market_order</strong></a>(self, share_counts)</dt><dd><tt>Place&nbsp;a&nbsp;batch&nbsp;market&nbsp;order&nbsp;for&nbsp;multiple&nbsp;assets.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+share_counts&nbsp;:&nbsp;pd.Series[Asset&nbsp;-&gt;&nbsp;int]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Map&nbsp;from&nbsp;asset&nbsp;to&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;order&nbsp;for&nbsp;that&nbsp;asset.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_ids&nbsp;:&nbsp;pd.Index[str]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;ids&nbsp;for&nbsp;newly-created&nbsp;orders.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-before_trading_start"><strong>before_trading_start</strong></a>(self, data)</dt></dl>
+
+<dl><dt><a name="TradingAlgorithm-calculate_capital_changes"><strong>calculate_capital_changes</strong></a>(self, dt, emission_rate, is_interday, portfolio_value_adjustment=0.0)</dt><dd><tt>If&nbsp;there&nbsp;is&nbsp;a&nbsp;capital&nbsp;change&nbsp;for&nbsp;a&nbsp;given&nbsp;dt,&nbsp;this&nbsp;means&nbsp;the&nbsp;the&nbsp;change<br>
+occurs&nbsp;before&nbsp;`handle_data`&nbsp;on&nbsp;the&nbsp;given&nbsp;dt.&nbsp;In&nbsp;the&nbsp;case&nbsp;of&nbsp;the<br>
+change&nbsp;being&nbsp;a&nbsp;target&nbsp;value,&nbsp;the&nbsp;change&nbsp;will&nbsp;be&nbsp;computed&nbsp;on&nbsp;the<br>
+portfolio&nbsp;value&nbsp;according&nbsp;to&nbsp;prices&nbsp;at&nbsp;the&nbsp;given&nbsp;dt<br>
+&nbsp;<br>
+`portfolio_value_adjustment`,&nbsp;if&nbsp;specified,&nbsp;will&nbsp;be&nbsp;removed&nbsp;from&nbsp;the<br>
+portfolio_value&nbsp;of&nbsp;the&nbsp;cumulative&nbsp;performance&nbsp;when&nbsp;calculating&nbsp;deltas<br>
+from&nbsp;target&nbsp;capital&nbsp;changes.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-cancel_order"><strong>cancel_order</strong></a>(self, order_param)</dt><dd><tt>Cancel&nbsp;an&nbsp;open&nbsp;order.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+order_param&nbsp;:&nbsp;str&nbsp;or&nbsp;Order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;order_id&nbsp;or&nbsp;order&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;cancel.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-compute_eager_pipelines"><strong>compute_eager_pipelines</strong></a>(self)</dt><dd><tt>Compute&nbsp;any&nbsp;pipelines&nbsp;attached&nbsp;with&nbsp;eager=True.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-continuous_future"><strong>continuous_future</strong></a>(self, root_symbol_str, offset=0, roll='volume', adjustment='mul')</dt><dd><tt>Create&nbsp;a&nbsp;specifier&nbsp;for&nbsp;a&nbsp;continuous&nbsp;contract.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+root_symbol_str&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;root&nbsp;symbol&nbsp;for&nbsp;the&nbsp;future&nbsp;chain.<br>
+&nbsp;<br>
+offset&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;distance&nbsp;from&nbsp;the&nbsp;primary&nbsp;contract.&nbsp;Default&nbsp;is&nbsp;0.<br>
+&nbsp;<br>
+roll_style&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;How&nbsp;rolls&nbsp;are&nbsp;determined.&nbsp;Default&nbsp;is&nbsp;'volume'.<br>
+&nbsp;<br>
+adjustment&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;for&nbsp;adjusting&nbsp;lookback&nbsp;prices&nbsp;between&nbsp;rolls.&nbsp;Options&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'mul',&nbsp;'add',&nbsp;and&nbsp;None.&nbsp;Default&nbsp;is&nbsp;'mul'.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+continuous_future&nbsp;:&nbsp;zipline.assets.ContinuousFuture<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;continuous&nbsp;future&nbsp;specifier.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-fetch_csv"><strong>fetch_csv</strong></a>(self, url, pre_func=None, post_func=None, date_column='date', date_format=None, timezone='UTC', symbol=None, mask=True, symbol_column=None, special_params_checker=None, country_code=None, **kwargs)</dt><dd><tt>Fetch&nbsp;a&nbsp;csv&nbsp;from&nbsp;a&nbsp;remote&nbsp;url&nbsp;and&nbsp;register&nbsp;the&nbsp;data&nbsp;so&nbsp;that&nbsp;it&nbsp;is<br>
+queryable&nbsp;from&nbsp;the&nbsp;``data``&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+url&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;url&nbsp;of&nbsp;the&nbsp;csv&nbsp;file&nbsp;to&nbsp;load.<br>
+pre_func&nbsp;:&nbsp;callable[pd.DataFrame&nbsp;-&gt;&nbsp;pd.DataFrame],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;callback&nbsp;to&nbsp;allow&nbsp;preprocessing&nbsp;the&nbsp;raw&nbsp;data&nbsp;returned&nbsp;from<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fetch_csv&nbsp;before&nbsp;dates&nbsp;are&nbsp;paresed&nbsp;or&nbsp;symbols&nbsp;are&nbsp;mapped.<br>
+post_func&nbsp;:&nbsp;callable[pd.DataFrame&nbsp;-&gt;&nbsp;pd.DataFrame],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;callback&nbsp;to&nbsp;allow&nbsp;postprocessing&nbsp;of&nbsp;the&nbsp;data&nbsp;after&nbsp;dates&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;symbols&nbsp;have&nbsp;been&nbsp;mapped.<br>
+date_column&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;column&nbsp;in&nbsp;the&nbsp;preprocessed&nbsp;dataframe&nbsp;containing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;datetime&nbsp;information&nbsp;to&nbsp;map&nbsp;the&nbsp;data.<br>
+date_format&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;format&nbsp;of&nbsp;the&nbsp;dates&nbsp;in&nbsp;the&nbsp;``date_column``.&nbsp;If&nbsp;not&nbsp;provided<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``fetch_csv``&nbsp;will&nbsp;attempt&nbsp;to&nbsp;infer&nbsp;the&nbsp;format.&nbsp;For&nbsp;information<br>
+&nbsp;&nbsp;&nbsp;&nbsp;about&nbsp;the&nbsp;format&nbsp;of&nbsp;this&nbsp;string,&nbsp;see&nbsp;:func:`pandas.read_csv`.<br>
+timezone&nbsp;:&nbsp;tzinfo&nbsp;or&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;timezone&nbsp;for&nbsp;the&nbsp;datetime&nbsp;in&nbsp;the&nbsp;``date_column``.<br>
+symbol&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;the&nbsp;data&nbsp;is&nbsp;about&nbsp;a&nbsp;new&nbsp;asset&nbsp;or&nbsp;index&nbsp;then&nbsp;this&nbsp;string&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;the&nbsp;name&nbsp;used&nbsp;to&nbsp;identify&nbsp;the&nbsp;values&nbsp;in&nbsp;``data``.&nbsp;For&nbsp;example,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;one&nbsp;may&nbsp;use&nbsp;``fetch_csv``&nbsp;to&nbsp;load&nbsp;data&nbsp;for&nbsp;VIX,&nbsp;then&nbsp;this&nbsp;field<br>
+&nbsp;&nbsp;&nbsp;&nbsp;could&nbsp;be&nbsp;the&nbsp;string&nbsp;``'VIX'``.<br>
+mask&nbsp;:&nbsp;bool,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;any&nbsp;rows&nbsp;which&nbsp;cannot&nbsp;be&nbsp;symbol&nbsp;mapped.<br>
+symbol_column&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;the&nbsp;data&nbsp;is&nbsp;attaching&nbsp;some&nbsp;new&nbsp;attribute&nbsp;to&nbsp;each&nbsp;asset&nbsp;then&nbsp;this<br>
+&nbsp;&nbsp;&nbsp;&nbsp;argument&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;column&nbsp;in&nbsp;the&nbsp;preprocessed&nbsp;dataframe<br>
+&nbsp;&nbsp;&nbsp;&nbsp;containing&nbsp;the&nbsp;symbols.&nbsp;This&nbsp;will&nbsp;be&nbsp;used&nbsp;along&nbsp;with&nbsp;the&nbsp;date<br>
+&nbsp;&nbsp;&nbsp;&nbsp;information&nbsp;to&nbsp;map&nbsp;the&nbsp;sids&nbsp;in&nbsp;the&nbsp;asset&nbsp;finder.<br>
+country_code&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Country&nbsp;code&nbsp;to&nbsp;use&nbsp;to&nbsp;disambiguate&nbsp;symbol&nbsp;lookups.<br>
+**kwargs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Forwarded&nbsp;to&nbsp;:func:`pandas.read_csv`.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+csv_data_source&nbsp;:&nbsp;zipline.sources.requests_csv.PandasRequestsCSV<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;requests&nbsp;source&nbsp;that&nbsp;will&nbsp;pull&nbsp;data&nbsp;from&nbsp;the&nbsp;url&nbsp;specified.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-future_symbol"><strong>future_symbol</strong></a>(self, symbol)</dt><dd><tt>Lookup&nbsp;a&nbsp;futures&nbsp;contract&nbsp;with&nbsp;a&nbsp;given&nbsp;symbol.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+symbol&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;symbol&nbsp;of&nbsp;the&nbsp;desired&nbsp;contract.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+future&nbsp;:&nbsp;zipline.assets.Future<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;future&nbsp;that&nbsp;trades&nbsp;with&nbsp;the&nbsp;name&nbsp;``symbol``.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+SymbolNotFound<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;no&nbsp;contract&nbsp;named&nbsp;'symbol'&nbsp;is&nbsp;found.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-get_datetime"><strong>get_datetime</strong></a>(self, tz=None)</dt><dd><tt>Returns&nbsp;the&nbsp;current&nbsp;simulation&nbsp;datetime.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+tz&nbsp;:&nbsp;tzinfo&nbsp;or&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;timezone&nbsp;to&nbsp;return&nbsp;the&nbsp;datetime&nbsp;in.&nbsp;This&nbsp;defaults&nbsp;to&nbsp;utc.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+dt&nbsp;:&nbsp;datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;current&nbsp;simulation&nbsp;datetime&nbsp;converted&nbsp;to&nbsp;``tz``.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-get_environment"><strong>get_environment</strong></a>(self, field='platform')</dt><dd><tt>Query&nbsp;the&nbsp;execution&nbsp;environment.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+field&nbsp;:&nbsp;{'platform',&nbsp;'arena',&nbsp;'data_frequency',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'start',&nbsp;'end',&nbsp;'capital_base',&nbsp;'platform',&nbsp;'*'}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;field&nbsp;to&nbsp;query.&nbsp;The&nbsp;options&nbsp;have&nbsp;the&nbsp;following&nbsp;meanings:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arena&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;arena&nbsp;from&nbsp;the&nbsp;simulation&nbsp;parameters.&nbsp;This&nbsp;will&nbsp;normally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;``'backtest'``&nbsp;but&nbsp;some&nbsp;systems&nbsp;may&nbsp;use&nbsp;this&nbsp;distinguish<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;live&nbsp;trading&nbsp;from&nbsp;backtesting.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_frequency&nbsp;:&nbsp;{'daily',&nbsp;'minute'}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_frequency&nbsp;tells&nbsp;the&nbsp;algorithm&nbsp;if&nbsp;it&nbsp;is&nbsp;running&nbsp;with<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daily&nbsp;data&nbsp;or&nbsp;minute&nbsp;data.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;:&nbsp;datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;start&nbsp;date&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;:&nbsp;datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;end&nbsp;date&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;capital_base&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;starting&nbsp;capital&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;platform&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;platform&nbsp;that&nbsp;the&nbsp;code&nbsp;is&nbsp;running&nbsp;on.&nbsp;By&nbsp;default&nbsp;this<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;be&nbsp;the&nbsp;string&nbsp;'zipline'.&nbsp;This&nbsp;can&nbsp;allow&nbsp;algorithms&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;know&nbsp;if&nbsp;they&nbsp;are&nbsp;running&nbsp;on&nbsp;the&nbsp;Quantopian&nbsp;platform&nbsp;instead.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;:&nbsp;dict[str&nbsp;-&gt;&nbsp;any]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;all&nbsp;of&nbsp;the&nbsp;fields&nbsp;in&nbsp;a&nbsp;dictionary.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+val&nbsp;:&nbsp;any<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;value&nbsp;for&nbsp;the&nbsp;field&nbsp;queried.&nbsp;See&nbsp;above&nbsp;for&nbsp;more&nbsp;information.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+<a href="builtins.html#ValueError">ValueError</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;``field``&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;option.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-get_generator"><strong>get_generator</strong></a>(self)</dt><dd><tt>Override&nbsp;this&nbsp;method&nbsp;to&nbsp;add&nbsp;new&nbsp;logic&nbsp;to&nbsp;the&nbsp;construction<br>
+of&nbsp;the&nbsp;generator.&nbsp;Overrides&nbsp;can&nbsp;use&nbsp;the&nbsp;_create_generator<br>
+method&nbsp;to&nbsp;get&nbsp;a&nbsp;standard&nbsp;construction&nbsp;generator.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-get_history_window"><strong>get_history_window</strong></a>(self, bar_count, frequency, assets, field, ffill)</dt></dl>
+
+<dl><dt><a name="TradingAlgorithm-get_open_orders"><strong>get_open_orders</strong></a>(self, asset=None)</dt><dd><tt>Retrieve&nbsp;all&nbsp;of&nbsp;the&nbsp;current&nbsp;open&nbsp;orders.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;passed&nbsp;and&nbsp;not&nbsp;None,&nbsp;return&nbsp;only&nbsp;the&nbsp;open&nbsp;orders&nbsp;for&nbsp;the&nbsp;given<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset&nbsp;instead&nbsp;of&nbsp;all&nbsp;open&nbsp;orders.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+open_orders&nbsp;:&nbsp;dict[list[Order]]&nbsp;or&nbsp;list[Order]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;no&nbsp;asset&nbsp;is&nbsp;passed&nbsp;this&nbsp;will&nbsp;return&nbsp;a&nbsp;dict&nbsp;mapping&nbsp;Assets<br>
+&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;a&nbsp;list&nbsp;containing&nbsp;all&nbsp;the&nbsp;open&nbsp;orders&nbsp;for&nbsp;the&nbsp;asset.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;an&nbsp;asset&nbsp;is&nbsp;passed&nbsp;then&nbsp;this&nbsp;will&nbsp;return&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;open<br>
+&nbsp;&nbsp;&nbsp;&nbsp;orders&nbsp;for&nbsp;this&nbsp;asset.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-get_order"><strong>get_order</strong></a>(self, order_id)</dt><dd><tt>Lookup&nbsp;an&nbsp;order&nbsp;based&nbsp;on&nbsp;the&nbsp;order&nbsp;id&nbsp;returned&nbsp;from&nbsp;one&nbsp;of&nbsp;the<br>
+order&nbsp;functions.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order&nbsp;:&nbsp;Order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;order&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-handle_data"><strong>handle_data</strong></a>(self, data)</dt></dl>
+
+<dl><dt><a name="TradingAlgorithm-history"><strong>history</strong></a>(self, bar_count, frequency, field, ffill=True)</dt><dd><tt>DEPRECATED:&nbsp;use&nbsp;``data.history``&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-init_engine"><strong>init_engine</strong></a>(self, get_loader)</dt><dd><tt>Construct&nbsp;and&nbsp;store&nbsp;a&nbsp;PipelineEngine&nbsp;from&nbsp;loader.<br>
+&nbsp;<br>
+If&nbsp;get_loader&nbsp;is&nbsp;None,&nbsp;constructs&nbsp;an&nbsp;ExplodingPipelineEngine</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-initialize"><strong>initialize</strong></a>(self, *args, **kwargs)</dt><dd><tt>Call&nbsp;self.<strong>_initialize</strong>&nbsp;with&nbsp;`self`&nbsp;made&nbsp;available&nbsp;to&nbsp;Zipline&nbsp;API<br>
+functions.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-on_dt_changed"><strong>on_dt_changed</strong></a>(self, dt)</dt><dd><tt>Callback&nbsp;triggered&nbsp;by&nbsp;the&nbsp;simulation&nbsp;loop&nbsp;whenever&nbsp;the&nbsp;current&nbsp;dt<br>
+changes.<br>
+&nbsp;<br>
+Any&nbsp;logic&nbsp;that&nbsp;should&nbsp;happen&nbsp;exactly&nbsp;once&nbsp;at&nbsp;the&nbsp;start&nbsp;of&nbsp;each&nbsp;datetime<br>
+group&nbsp;should&nbsp;happen&nbsp;here.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-order"><strong>order</strong></a>(self, asset, amount, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;for&nbsp;a&nbsp;fixed&nbsp;number&nbsp;of&nbsp;shares.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;to&nbsp;be&nbsp;ordered.<br>
+amount&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;amount&nbsp;of&nbsp;shares&nbsp;to&nbsp;order.&nbsp;If&nbsp;``amount``&nbsp;is&nbsp;positive,&nbsp;this&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;buy&nbsp;or&nbsp;cover.&nbsp;If&nbsp;``amount``&nbsp;is&nbsp;negative,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;sell&nbsp;or&nbsp;short.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str&nbsp;or&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order,&nbsp;or&nbsp;None&nbsp;if&nbsp;no&nbsp;order&nbsp;was<br>
+&nbsp;&nbsp;&nbsp;&nbsp;placed.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+The&nbsp;``limit_price``&nbsp;and&nbsp;``stop_price``&nbsp;arguments&nbsp;provide&nbsp;shorthands&nbsp;for<br>
+passing&nbsp;common&nbsp;execution&nbsp;styles.&nbsp;Passing&nbsp;``limit_price=N``&nbsp;is<br>
+equivalent&nbsp;to&nbsp;``style=LimitOrder(N)``.&nbsp;Similarly,&nbsp;passing<br>
+``stop_price=M``&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;``style=StopOrder(M)``,&nbsp;and&nbsp;passing<br>
+``limit_price=N``&nbsp;and&nbsp;``stop_price=M``&nbsp;is&nbsp;equivalent&nbsp;to<br>
+``style=StopLimitOrder(N,&nbsp;M)``.&nbsp;It&nbsp;is&nbsp;an&nbsp;error&nbsp;to&nbsp;pass&nbsp;both&nbsp;a&nbsp;``style``<br>
+and&nbsp;``limit_price``&nbsp;or&nbsp;``stop_price``.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order_value`<br>
+:func:`zipline.api.order_percent`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-order_percent"><strong>order_percent</strong></a>(self, asset, percent, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;in&nbsp;the&nbsp;specified&nbsp;asset&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;given<br>
+percent&nbsp;of&nbsp;the&nbsp;current&nbsp;portfolio&nbsp;value.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;that&nbsp;this&nbsp;order&nbsp;is&nbsp;for.<br>
+percent&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;percentage&nbsp;of&nbsp;the&nbsp;portfolio&nbsp;value&nbsp;to&nbsp;allocate&nbsp;to&nbsp;``asset``.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;specified&nbsp;as&nbsp;a&nbsp;decimal,&nbsp;for&nbsp;example:&nbsp;0.50&nbsp;means&nbsp;50%.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_value`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-order_target"><strong>order_target</strong></a>(self, asset, target, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;to&nbsp;adjust&nbsp;a&nbsp;position&nbsp;to&nbsp;a&nbsp;target&nbsp;number&nbsp;of&nbsp;shares.&nbsp;If<br>
+the&nbsp;position&nbsp;doesn't&nbsp;already&nbsp;exist,&nbsp;this&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;placing&nbsp;a&nbsp;new<br>
+order.&nbsp;If&nbsp;the&nbsp;position&nbsp;does&nbsp;exist,&nbsp;this&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;placing&nbsp;an<br>
+order&nbsp;for&nbsp;the&nbsp;difference&nbsp;between&nbsp;the&nbsp;target&nbsp;number&nbsp;of&nbsp;shares&nbsp;and&nbsp;the<br>
+current&nbsp;number&nbsp;of&nbsp;shares.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;that&nbsp;this&nbsp;order&nbsp;is&nbsp;for.<br>
+target&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;desired&nbsp;number&nbsp;of&nbsp;shares&nbsp;of&nbsp;``asset``.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+``order_target``&nbsp;does&nbsp;not&nbsp;take&nbsp;into&nbsp;account&nbsp;any&nbsp;open&nbsp;orders.&nbsp;For<br>
+example:<br>
+&nbsp;<br>
+..&nbsp;code-block::&nbsp;python<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<a href="#TradingAlgorithm-order_target">order_target</a>(<a href="#TradingAlgorithm-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;&nbsp;&nbsp;<a href="#TradingAlgorithm-order_target">order_target</a>(<a href="#TradingAlgorithm-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;<br>
+This&nbsp;code&nbsp;will&nbsp;result&nbsp;in&nbsp;20&nbsp;shares&nbsp;of&nbsp;``<a href="#TradingAlgorithm-sid">sid</a>(0)``&nbsp;because&nbsp;the&nbsp;first<br>
+call&nbsp;to&nbsp;``order_target``&nbsp;will&nbsp;not&nbsp;have&nbsp;been&nbsp;filled&nbsp;when&nbsp;the&nbsp;second<br>
+``order_target``&nbsp;call&nbsp;is&nbsp;made.<br>
+&nbsp;<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_target_percent`<br>
+:func:`zipline.api.order_target_value`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-order_target_percent"><strong>order_target_percent</strong></a>(self, asset, target, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;to&nbsp;adjust&nbsp;a&nbsp;position&nbsp;to&nbsp;a&nbsp;target&nbsp;percent&nbsp;of&nbsp;the<br>
+current&nbsp;portfolio&nbsp;value.&nbsp;If&nbsp;the&nbsp;position&nbsp;doesn't&nbsp;already&nbsp;exist,&nbsp;this&nbsp;is<br>
+equivalent&nbsp;to&nbsp;placing&nbsp;a&nbsp;new&nbsp;order.&nbsp;If&nbsp;the&nbsp;position&nbsp;does&nbsp;exist,&nbsp;this&nbsp;is<br>
+equivalent&nbsp;to&nbsp;placing&nbsp;an&nbsp;order&nbsp;for&nbsp;the&nbsp;difference&nbsp;between&nbsp;the&nbsp;target<br>
+percent&nbsp;and&nbsp;the&nbsp;current&nbsp;percent.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;that&nbsp;this&nbsp;order&nbsp;is&nbsp;for.<br>
+target&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;desired&nbsp;percentage&nbsp;of&nbsp;the&nbsp;portfolio&nbsp;value&nbsp;to&nbsp;allocate&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``asset``.&nbsp;This&nbsp;is&nbsp;specified&nbsp;as&nbsp;a&nbsp;decimal,&nbsp;for&nbsp;example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0.50&nbsp;means&nbsp;50%.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+``order_target_value``&nbsp;does&nbsp;not&nbsp;take&nbsp;into&nbsp;account&nbsp;any&nbsp;open&nbsp;orders.&nbsp;For<br>
+example:<br>
+&nbsp;<br>
+..&nbsp;code-block::&nbsp;python<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<a href="#TradingAlgorithm-order_target_percent">order_target_percent</a>(<a href="#TradingAlgorithm-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;&nbsp;&nbsp;<a href="#TradingAlgorithm-order_target_percent">order_target_percent</a>(<a href="#TradingAlgorithm-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;<br>
+This&nbsp;code&nbsp;will&nbsp;result&nbsp;in&nbsp;20%&nbsp;of&nbsp;the&nbsp;portfolio&nbsp;being&nbsp;allocated&nbsp;to&nbsp;<a href="#TradingAlgorithm-sid">sid</a>(0)<br>
+because&nbsp;the&nbsp;first&nbsp;call&nbsp;to&nbsp;``order_target_percent``&nbsp;will&nbsp;not&nbsp;have&nbsp;been<br>
+filled&nbsp;when&nbsp;the&nbsp;second&nbsp;``order_target_percent``&nbsp;call&nbsp;is&nbsp;made.<br>
+&nbsp;<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_target`<br>
+:func:`zipline.api.order_target_value`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-order_target_value"><strong>order_target_value</strong></a>(self, asset, target, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;to&nbsp;adjust&nbsp;a&nbsp;position&nbsp;to&nbsp;a&nbsp;target&nbsp;value.&nbsp;If<br>
+the&nbsp;position&nbsp;doesn't&nbsp;already&nbsp;exist,&nbsp;this&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;placing&nbsp;a&nbsp;new<br>
+order.&nbsp;If&nbsp;the&nbsp;position&nbsp;does&nbsp;exist,&nbsp;this&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;placing&nbsp;an<br>
+order&nbsp;for&nbsp;the&nbsp;difference&nbsp;between&nbsp;the&nbsp;target&nbsp;value&nbsp;and&nbsp;the<br>
+current&nbsp;value.<br>
+If&nbsp;the&nbsp;Asset&nbsp;being&nbsp;ordered&nbsp;is&nbsp;a&nbsp;Future,&nbsp;the&nbsp;'target&nbsp;value'&nbsp;calculated<br>
+is&nbsp;actually&nbsp;the&nbsp;target&nbsp;exposure,&nbsp;as&nbsp;Futures&nbsp;have&nbsp;no&nbsp;'value'.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;that&nbsp;this&nbsp;order&nbsp;is&nbsp;for.<br>
+target&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;desired&nbsp;total&nbsp;value&nbsp;of&nbsp;``asset``.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+``order_target_value``&nbsp;does&nbsp;not&nbsp;take&nbsp;into&nbsp;account&nbsp;any&nbsp;open&nbsp;orders.&nbsp;For<br>
+example:<br>
+&nbsp;<br>
+..&nbsp;code-block::&nbsp;python<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<a href="#TradingAlgorithm-order_target_value">order_target_value</a>(<a href="#TradingAlgorithm-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;&nbsp;&nbsp;<a href="#TradingAlgorithm-order_target_value">order_target_value</a>(<a href="#TradingAlgorithm-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;<br>
+This&nbsp;code&nbsp;will&nbsp;result&nbsp;in&nbsp;20&nbsp;dollars&nbsp;of&nbsp;``<a href="#TradingAlgorithm-sid">sid</a>(0)``&nbsp;because&nbsp;the&nbsp;first<br>
+call&nbsp;to&nbsp;``order_target_value``&nbsp;will&nbsp;not&nbsp;have&nbsp;been&nbsp;filled&nbsp;when&nbsp;the<br>
+second&nbsp;``order_target_value``&nbsp;call&nbsp;is&nbsp;made.<br>
+&nbsp;<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_target`<br>
+:func:`zipline.api.order_target_percent`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-order_value"><strong>order_value</strong></a>(self, asset, value, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;for&nbsp;a&nbsp;fixed&nbsp;amount&nbsp;of&nbsp;money.<br>
+&nbsp;<br>
+Equivalent&nbsp;to&nbsp;``<a href="#TradingAlgorithm-order">order</a>(asset,&nbsp;value&nbsp;/&nbsp;data.current(asset,&nbsp;'price'))``.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;to&nbsp;be&nbsp;ordered.<br>
+value&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Amount&nbsp;of&nbsp;value&nbsp;of&nbsp;``asset``&nbsp;to&nbsp;be&nbsp;transacted.&nbsp;The&nbsp;number&nbsp;of&nbsp;shares<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bought&nbsp;or&nbsp;sold&nbsp;will&nbsp;be&nbsp;equal&nbsp;to&nbsp;``value&nbsp;/&nbsp;current_price``.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_percent`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-pipeline_output"><strong>pipeline_output</strong></a>(self, name)</dt><dd><tt>Get&nbsp;results&nbsp;of&nbsp;the&nbsp;pipeline&nbsp;attached&nbsp;by&nbsp;with&nbsp;name&nbsp;``name``.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;of&nbsp;the&nbsp;pipeline&nbsp;from&nbsp;which&nbsp;to&nbsp;fetch&nbsp;results.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+results&nbsp;:&nbsp;pd.DataFrame<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataFrame&nbsp;containing&nbsp;the&nbsp;results&nbsp;of&nbsp;the&nbsp;requested&nbsp;pipeline&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;current&nbsp;simulation&nbsp;date.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+NoSuchPipeline<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;no&nbsp;pipeline&nbsp;with&nbsp;the&nbsp;name&nbsp;`name`&nbsp;has&nbsp;been&nbsp;registered.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`zipline.api.attach_pipeline`<br>
+:meth:`zipline.pipeline.engine.PipelineEngine.run_pipeline`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-record"><strong>record</strong></a>(self, *args, **kwargs)</dt><dd><tt>Track&nbsp;and&nbsp;record&nbsp;values&nbsp;each&nbsp;day.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+**kwargs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;names&nbsp;and&nbsp;values&nbsp;to&nbsp;record.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+These&nbsp;values&nbsp;will&nbsp;appear&nbsp;in&nbsp;the&nbsp;performance&nbsp;packets&nbsp;and&nbsp;the&nbsp;performance<br>
+dataframe&nbsp;passed&nbsp;to&nbsp;``analyze``&nbsp;and&nbsp;returned&nbsp;from<br>
+:func:`~zipline.run_algorithm`.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-register_account_control"><strong>register_account_control</strong></a>(self, control)</dt><dd><tt>Register&nbsp;a&nbsp;new&nbsp;AccountControl&nbsp;to&nbsp;be&nbsp;checked&nbsp;on&nbsp;each&nbsp;bar.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-register_trading_control"><strong>register_trading_control</strong></a>(self, control)</dt><dd><tt>Register&nbsp;a&nbsp;new&nbsp;TradingControl&nbsp;to&nbsp;be&nbsp;checked&nbsp;prior&nbsp;to&nbsp;order&nbsp;calls.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-run"><strong>run</strong></a>(self, data_portal=None)</dt><dd><tt>Run&nbsp;the&nbsp;algorithm.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-run_pipeline"><strong>run_pipeline</strong></a>(self, pipeline, start_session, chunksize)</dt><dd><tt>Compute&nbsp;`pipeline`,&nbsp;providing&nbsp;values&nbsp;for&nbsp;at&nbsp;least&nbsp;`start_date`.<br>
+&nbsp;<br>
+Produces&nbsp;a&nbsp;DataFrame&nbsp;containing&nbsp;data&nbsp;for&nbsp;days&nbsp;between&nbsp;`start_date`&nbsp;and<br>
+`end_date`,&nbsp;where&nbsp;`end_date`&nbsp;is&nbsp;defined&nbsp;by:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`end_date&nbsp;=&nbsp;min(start_date&nbsp;+&nbsp;chunksize&nbsp;trading&nbsp;days,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simulation_end)`<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+(data,&nbsp;valid_until)&nbsp;:&nbsp;<a href="builtins.html#tuple">tuple</a>&nbsp;(pd.DataFrame,&nbsp;pd.Timestamp)<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+PipelineEngine.run_pipeline</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-schedule_function"><strong>schedule_function</strong></a>(self, func, date_rule=None, time_rule=None, half_days=True, calendar=None)</dt><dd><tt>Schedule&nbsp;a&nbsp;function&nbsp;to&nbsp;be&nbsp;called&nbsp;repeatedly&nbsp;in&nbsp;the&nbsp;future.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+func&nbsp;:&nbsp;callable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;function&nbsp;to&nbsp;execute&nbsp;when&nbsp;the&nbsp;rule&nbsp;is&nbsp;triggered.&nbsp;``func``&nbsp;should<br>
+&nbsp;&nbsp;&nbsp;&nbsp;have&nbsp;the&nbsp;same&nbsp;signature&nbsp;as&nbsp;``handle_data``.<br>
+date_rule&nbsp;:&nbsp;zipline.utils.events.EventRule,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rule&nbsp;for&nbsp;the&nbsp;dates&nbsp;on&nbsp;which&nbsp;to&nbsp;execute&nbsp;``func``.&nbsp;If&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;passed,&nbsp;the&nbsp;function&nbsp;will&nbsp;run&nbsp;every&nbsp;trading&nbsp;day.<br>
+time_rule&nbsp;:&nbsp;zipline.utils.events.EventRule,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rule&nbsp;for&nbsp;the&nbsp;time&nbsp;at&nbsp;which&nbsp;to&nbsp;execute&nbsp;``func``.&nbsp;If&nbsp;not&nbsp;passed,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;will&nbsp;execute&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;first&nbsp;market&nbsp;minute&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;day.<br>
+half_days&nbsp;:&nbsp;bool,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Should&nbsp;this&nbsp;rule&nbsp;fire&nbsp;on&nbsp;half&nbsp;days?&nbsp;Default&nbsp;is&nbsp;True.<br>
+calendar&nbsp;:&nbsp;Sentinel,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Calendar&nbsp;used&nbsp;to&nbsp;compute&nbsp;rules&nbsp;that&nbsp;depend&nbsp;on&nbsp;the&nbsp;trading&nbsp;calendar.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.api.date_rules`<br>
+:class:`zipline.api.time_rules`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_asset_restrictions"><strong>set_asset_restrictions</strong></a>(self, restrictions, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;restriction&nbsp;on&nbsp;which&nbsp;assets&nbsp;can&nbsp;be&nbsp;ordered.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+restricted_list&nbsp;:&nbsp;Restrictions<br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;<a href="builtins.html#object">object</a>&nbsp;providing&nbsp;information&nbsp;about&nbsp;restricted&nbsp;assets.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+zipline.finance.asset_restrictions.Restrictions</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_benchmark"><strong>set_benchmark</strong></a>(self, benchmark)</dt><dd><tt>Set&nbsp;the&nbsp;benchmark&nbsp;asset.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+benchmark&nbsp;:&nbsp;zipline.assets.Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;to&nbsp;set&nbsp;as&nbsp;the&nbsp;new&nbsp;benchmark.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+Any&nbsp;dividends&nbsp;payed&nbsp;out&nbsp;for&nbsp;that&nbsp;new&nbsp;benchmark&nbsp;asset&nbsp;will&nbsp;be<br>
+automatically&nbsp;reinvested.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_cancel_policy"><strong>set_cancel_policy</strong></a>(self, cancel_policy)</dt><dd><tt>Sets&nbsp;the&nbsp;order&nbsp;cancellation&nbsp;policy&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+cancel_policy&nbsp;:&nbsp;CancelPolicy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;cancellation&nbsp;policy&nbsp;to&nbsp;use.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.api.EODCancel`<br>
+:class:`zipline.api.NeverCancel`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_commission"><strong>set_commission</strong></a>(self, us_equities=None, us_futures=None)</dt><dd><tt>Sets&nbsp;the&nbsp;commission&nbsp;models&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+us_equities&nbsp;:&nbsp;EquityCommissionModel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;commission&nbsp;model&nbsp;to&nbsp;use&nbsp;for&nbsp;trading&nbsp;US&nbsp;equities.<br>
+us_futures&nbsp;:&nbsp;FutureCommissionModel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;commission&nbsp;model&nbsp;to&nbsp;use&nbsp;for&nbsp;trading&nbsp;US&nbsp;futures.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+This&nbsp;function&nbsp;can&nbsp;only&nbsp;be&nbsp;called&nbsp;during<br>
+:func:`~zipline.api.initialize`.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.commission.PerShare`<br>
+:class:`zipline.finance.commission.PerTrade`<br>
+:class:`zipline.finance.commission.PerDollar`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_do_not_order_list"><strong>set_do_not_order_list</strong></a>(self, restricted_list, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;restriction&nbsp;on&nbsp;which&nbsp;assets&nbsp;can&nbsp;be&nbsp;ordered.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+restricted_list&nbsp;:&nbsp;container[Asset],&nbsp;SecurityList<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;assets&nbsp;that&nbsp;cannot&nbsp;be&nbsp;ordered.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_logger"><strong>set_logger</strong></a>(self, logger)</dt></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_long_only"><strong>set_long_only</strong></a>(self, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;rule&nbsp;specifying&nbsp;that&nbsp;this&nbsp;algorithm&nbsp;cannot&nbsp;take&nbsp;short<br>
+positions.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_max_leverage"><strong>set_max_leverage</strong></a>(self, max_leverage)</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;maximum&nbsp;leverage&nbsp;of&nbsp;the&nbsp;algorithm.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+max_leverage&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;leverage&nbsp;for&nbsp;the&nbsp;algorithm.&nbsp;If&nbsp;not&nbsp;provided&nbsp;there&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;no&nbsp;maximum.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_max_order_count"><strong>set_max_order_count</strong></a>(self, max_count, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;orders&nbsp;that&nbsp;can&nbsp;be&nbsp;placed&nbsp;in&nbsp;a&nbsp;single<br>
+day.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+max_count&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;number&nbsp;of&nbsp;orders&nbsp;that&nbsp;can&nbsp;be&nbsp;placed&nbsp;on&nbsp;any&nbsp;single&nbsp;day.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_max_order_size"><strong>set_max_order_size</strong></a>(self, asset=None, max_shares=None, max_notional=None, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;and/or&nbsp;dollar&nbsp;value&nbsp;of&nbsp;any&nbsp;single<br>
+order&nbsp;placed&nbsp;for&nbsp;sid.&nbsp;&nbsp;Limits&nbsp;are&nbsp;treated&nbsp;as&nbsp;absolute&nbsp;values&nbsp;and&nbsp;are<br>
+enforced&nbsp;at&nbsp;the&nbsp;time&nbsp;that&nbsp;the&nbsp;algo&nbsp;attempts&nbsp;to&nbsp;place&nbsp;an&nbsp;order&nbsp;for&nbsp;sid.<br>
+&nbsp;<br>
+If&nbsp;an&nbsp;algorithm&nbsp;attempts&nbsp;to&nbsp;place&nbsp;an&nbsp;order&nbsp;that&nbsp;would&nbsp;result&nbsp;in<br>
+exceeding&nbsp;one&nbsp;of&nbsp;these&nbsp;limits,&nbsp;raise&nbsp;a&nbsp;TradingControlException.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;provided,&nbsp;this&nbsp;sets&nbsp;the&nbsp;guard&nbsp;only&nbsp;on&nbsp;positions&nbsp;in&nbsp;the&nbsp;given<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset.<br>
+max_shares&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;number&nbsp;of&nbsp;shares&nbsp;that&nbsp;can&nbsp;be&nbsp;ordered&nbsp;at&nbsp;one&nbsp;time.<br>
+max_notional&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;value&nbsp;that&nbsp;can&nbsp;be&nbsp;ordered&nbsp;at&nbsp;one&nbsp;time.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_max_position_size"><strong>set_max_position_size</strong></a>(self, asset=None, max_shares=None, max_notional=None, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;and/or&nbsp;dollar&nbsp;value&nbsp;held&nbsp;for&nbsp;the<br>
+given&nbsp;sid.&nbsp;Limits&nbsp;are&nbsp;treated&nbsp;as&nbsp;absolute&nbsp;values&nbsp;and&nbsp;are&nbsp;enforced&nbsp;at<br>
+the&nbsp;time&nbsp;that&nbsp;the&nbsp;algo&nbsp;attempts&nbsp;to&nbsp;place&nbsp;an&nbsp;order&nbsp;for&nbsp;sid.&nbsp;This&nbsp;means<br>
+that&nbsp;it's&nbsp;possible&nbsp;to&nbsp;end&nbsp;up&nbsp;with&nbsp;more&nbsp;than&nbsp;the&nbsp;max&nbsp;number&nbsp;of&nbsp;shares<br>
+due&nbsp;to&nbsp;splits/dividends,&nbsp;and&nbsp;more&nbsp;than&nbsp;the&nbsp;max&nbsp;notional&nbsp;due&nbsp;to&nbsp;price<br>
+improvement.<br>
+&nbsp;<br>
+If&nbsp;an&nbsp;algorithm&nbsp;attempts&nbsp;to&nbsp;place&nbsp;an&nbsp;order&nbsp;that&nbsp;would&nbsp;result&nbsp;in<br>
+increasing&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;shares/dollar&nbsp;value&nbsp;exceeding&nbsp;one&nbsp;of<br>
+these&nbsp;limits,&nbsp;raise&nbsp;a&nbsp;TradingControlException.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;provided,&nbsp;this&nbsp;sets&nbsp;the&nbsp;guard&nbsp;only&nbsp;on&nbsp;positions&nbsp;in&nbsp;the&nbsp;given<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset.<br>
+max_shares&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;hold&nbsp;for&nbsp;an&nbsp;asset.<br>
+max_notional&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;value&nbsp;to&nbsp;hold&nbsp;for&nbsp;an&nbsp;asset.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_min_leverage"><strong>set_min_leverage</strong></a>(self, min_leverage, grace_period)</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;minimum&nbsp;leverage&nbsp;of&nbsp;the&nbsp;algorithm.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+min_leverage&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;minimum&nbsp;leverage&nbsp;for&nbsp;the&nbsp;algorithm.<br>
+grace_period&nbsp;:&nbsp;pd.Timedelta<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;offset&nbsp;from&nbsp;the&nbsp;start&nbsp;date&nbsp;used&nbsp;to&nbsp;enforce&nbsp;a&nbsp;minimum&nbsp;leverage.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_slippage"><strong>set_slippage</strong></a>(self, us_equities=None, us_futures=None)</dt><dd><tt>Set&nbsp;the&nbsp;slippage&nbsp;models&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+us_equities&nbsp;:&nbsp;EquitySlippageModel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;slippage&nbsp;model&nbsp;to&nbsp;use&nbsp;for&nbsp;trading&nbsp;US&nbsp;equities.<br>
+us_futures&nbsp;:&nbsp;FutureSlippageModel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;slippage&nbsp;model&nbsp;to&nbsp;use&nbsp;for&nbsp;trading&nbsp;US&nbsp;futures.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+This&nbsp;function&nbsp;can&nbsp;only&nbsp;be&nbsp;called&nbsp;during<br>
+:func:`~zipline.api.initialize`.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.slippage.SlippageModel`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-set_symbol_lookup_date"><strong>set_symbol_lookup_date</strong></a>(self, dt)</dt><dd><tt>Set&nbsp;the&nbsp;date&nbsp;for&nbsp;which&nbsp;symbols&nbsp;will&nbsp;be&nbsp;resolved&nbsp;to&nbsp;their&nbsp;assets<br>
+(symbols&nbsp;may&nbsp;map&nbsp;to&nbsp;different&nbsp;firms&nbsp;or&nbsp;underlying&nbsp;assets&nbsp;at<br>
+different&nbsp;times)<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+dt&nbsp;:&nbsp;datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;new&nbsp;symbol&nbsp;lookup&nbsp;date.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-sid"><strong>sid</strong></a>(self, sid)</dt><dd><tt>Lookup&nbsp;an&nbsp;Asset&nbsp;by&nbsp;its&nbsp;unique&nbsp;asset&nbsp;identifier.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+sid&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;integer&nbsp;that&nbsp;identifies&nbsp;an&nbsp;asset.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+asset&nbsp;:&nbsp;zipline.assets.Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;with&nbsp;the&nbsp;given&nbsp;``sid``.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+SidsNotFound<br>
+&nbsp;&nbsp;&nbsp;&nbsp;When&nbsp;a&nbsp;requested&nbsp;``sid``&nbsp;does&nbsp;not&nbsp;map&nbsp;to&nbsp;any&nbsp;asset.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-symbol"><strong>symbol</strong></a>(self, symbol_str, country_code=None)</dt><dd><tt>Lookup&nbsp;an&nbsp;Equity&nbsp;by&nbsp;its&nbsp;ticker&nbsp;symbol.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+symbol_str&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;ticker&nbsp;symbol&nbsp;for&nbsp;the&nbsp;equity&nbsp;to&nbsp;lookup.<br>
+country_code&nbsp;:&nbsp;str&nbsp;or&nbsp;None,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;country&nbsp;to&nbsp;limit&nbsp;symbol&nbsp;searches&nbsp;to.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+equity&nbsp;:&nbsp;zipline.assets.Equity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;equity&nbsp;that&nbsp;held&nbsp;the&nbsp;ticker&nbsp;symbol&nbsp;on&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;symbol&nbsp;lookup&nbsp;date.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+SymbolNotFound<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;the&nbsp;symbols&nbsp;was&nbsp;not&nbsp;held&nbsp;on&nbsp;the&nbsp;current&nbsp;lookup&nbsp;date.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`zipline.api.set_symbol_lookup_date`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-symbols"><strong>symbols</strong></a>(self, *args, **kwargs)</dt><dd><tt>Lookup&nbsp;multuple&nbsp;Equities&nbsp;as&nbsp;a&nbsp;list.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+*args&nbsp;:&nbsp;iterable[str]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;ticker&nbsp;symbols&nbsp;to&nbsp;lookup.<br>
+country_code&nbsp;:&nbsp;str&nbsp;or&nbsp;None,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;country&nbsp;to&nbsp;limit&nbsp;symbol&nbsp;searches&nbsp;to.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+equities&nbsp;:&nbsp;list[zipline.assets.Equity]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;equities&nbsp;that&nbsp;held&nbsp;the&nbsp;given&nbsp;ticker&nbsp;symbols&nbsp;on&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;symbol&nbsp;lookup&nbsp;date.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+SymbolNotFound<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;one&nbsp;of&nbsp;the&nbsp;symbols&nbsp;was&nbsp;not&nbsp;held&nbsp;on&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lookup&nbsp;date.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`zipline.api.set_symbol_lookup_date`</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-validate_account_controls"><strong>validate_account_controls</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="TradingAlgorithm-validate_order_params"><strong>validate_order_params</strong></a>(self, asset, amount, limit_price, stop_price, style)</dt><dd><tt>Helper&nbsp;method&nbsp;for&nbsp;validating&nbsp;parameters&nbsp;to&nbsp;the&nbsp;order&nbsp;API&nbsp;function.<br>
+&nbsp;<br>
+Raises&nbsp;an&nbsp;UnsupportedOrderParameters&nbsp;if&nbsp;invalid&nbsp;arguments&nbsp;are&nbsp;found.</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="TradingAlgorithm-all_api_methods"><strong>all_api_methods</strong></a>()<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Return&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;<a href="#TradingAlgorithm">TradingAlgorithm</a>&nbsp;API&nbsp;methods.</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="TradingAlgorithm-default_fetch_csv_country_code"><strong>default_fetch_csv_country_code</strong></a>(calendar)</dt><dd><tt>Get&nbsp;a&nbsp;default&nbsp;country_code&nbsp;to&nbsp;use&nbsp;for&nbsp;fetch_csv&nbsp;symbol&nbsp;lookups.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;be&nbsp;used&nbsp;to&nbsp;disambiguate&nbsp;symbol&nbsp;lookups&nbsp;for&nbsp;fetch_csv&nbsp;calls&nbsp;if<br>
+our&nbsp;asset&nbsp;db&nbsp;contains&nbsp;entries&nbsp;with&nbsp;the&nbsp;same&nbsp;ticker&nbsp;spread&nbsp;across<br>
+multiple</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-default_pipeline_domain"><strong>default_pipeline_domain</strong></a>(calendar)</dt><dd><tt>Get&nbsp;a&nbsp;default&nbsp;pipeline&nbsp;domain&nbsp;for&nbsp;algorithms&nbsp;running&nbsp;on&nbsp;``calendar``.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;be&nbsp;used&nbsp;to&nbsp;infer&nbsp;a&nbsp;domain&nbsp;for&nbsp;pipelines&nbsp;that&nbsp;only&nbsp;use&nbsp;generic<br>
+datasets&nbsp;when&nbsp;running&nbsp;in&nbsp;the&nbsp;context&nbsp;of&nbsp;a&nbsp;<a href="#TradingAlgorithm">TradingAlgorithm</a>.</tt></dd></dl>
+
+<dl><dt><a name="TradingAlgorithm-round_order"><strong>round_order</strong></a>(amount)</dt><dd><tt>Convert&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;an&nbsp;integer.<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;truncates&nbsp;to&nbsp;the&nbsp;integer&nbsp;share&nbsp;count&nbsp;that's&nbsp;either&nbsp;within<br>
+.0001&nbsp;of&nbsp;amount&nbsp;or&nbsp;closer&nbsp;to&nbsp;zero.<br>
+&nbsp;<br>
+E.g.&nbsp;3.9999&nbsp;-&gt;&nbsp;4.0;&nbsp;5.5&nbsp;-&gt;&nbsp;5.0;&nbsp;-5.5&nbsp;-&gt;&nbsp;-5.0</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>account</strong></dt>
+</dl>
+<dl><dt><strong>data_frequency</strong></dt>
+</dl>
+<dl><dt><strong>portfolio</strong></dt>
+</dl>
+<dl><dt><strong>recorded_vars</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-exec_"><strong>exec_</strong></a> = exec(source, globals=None, locals=None, /)</dt><dd><tt>Execute&nbsp;the&nbsp;given&nbsp;source&nbsp;in&nbsp;the&nbsp;context&nbsp;of&nbsp;globals&nbsp;and&nbsp;locals.<br>
+&nbsp;<br>
+The&nbsp;source&nbsp;may&nbsp;be&nbsp;a&nbsp;string&nbsp;representing&nbsp;one&nbsp;or&nbsp;more&nbsp;Python&nbsp;statements<br>
+or&nbsp;a&nbsp;code&nbsp;<a href="builtins.html#object">object</a>&nbsp;as&nbsp;returned&nbsp;by&nbsp;compile().<br>
+The&nbsp;globals&nbsp;must&nbsp;be&nbsp;a&nbsp;dictionary&nbsp;and&nbsp;locals&nbsp;can&nbsp;be&nbsp;any&nbsp;mapping,<br>
+defaulting&nbsp;to&nbsp;the&nbsp;current&nbsp;globals&nbsp;and&nbsp;locals.<br>
+If&nbsp;only&nbsp;globals&nbsp;is&nbsp;given,&nbsp;locals&nbsp;defaults&nbsp;to&nbsp;it.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>coerce_string</strong> = functools.partial(&lt;function coerce at 0x000001D246867D08&gt;, (&lt;class 'str'&gt;,))<br>
+<strong>int64_dtype</strong> = dtype('int64')<br>
+<strong>log</strong> = &lt;logbook.base.Logger object&gt;<br>
+<strong>string_types</strong> = (&lt;class 'str'&gt;,)</td></tr></table>
+</body></html>

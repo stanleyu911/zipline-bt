@@ -1,0 +1,1554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module zipline.api</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="zipline.html"><font color="#ffffff">zipline</font></a>.api</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cstanley%5Canaconda3%5Cenvs%5Czipline_36%5Clib%5Csite-packages%5Czipline%5Capi.py">c:\users\stanley\anaconda3\envs\zipline_36\lib\site-packages\zipline\api.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Copyright&nbsp;2014&nbsp;Quantopian,&nbsp;Inc.<br>
+#<br>
+#&nbsp;Licensed&nbsp;under&nbsp;the&nbsp;Apache&nbsp;License,&nbsp;Version&nbsp;2.0&nbsp;(the&nbsp;"License");<br>
+#&nbsp;you&nbsp;may&nbsp;not&nbsp;use&nbsp;this&nbsp;file&nbsp;except&nbsp;in&nbsp;compliance&nbsp;with&nbsp;the&nbsp;License.<br>
+#&nbsp;You&nbsp;may&nbsp;obtain&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;License&nbsp;at<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a><br>
+#<br>
+#&nbsp;Unless&nbsp;required&nbsp;by&nbsp;applicable&nbsp;law&nbsp;or&nbsp;agreed&nbsp;to&nbsp;in&nbsp;writing,&nbsp;software<br>
+#&nbsp;distributed&nbsp;under&nbsp;the&nbsp;License&nbsp;is&nbsp;distributed&nbsp;on&nbsp;an&nbsp;"AS&nbsp;IS"&nbsp;BASIS,<br>
+#&nbsp;WITHOUT&nbsp;WARRANTIES&nbsp;OR&nbsp;CONDITIONS&nbsp;OF&nbsp;ANY&nbsp;KIND,&nbsp;either&nbsp;express&nbsp;or&nbsp;implied.<br>
+#&nbsp;See&nbsp;the&nbsp;License&nbsp;for&nbsp;the&nbsp;specific&nbsp;language&nbsp;governing&nbsp;permissions&nbsp;and<br>
+#&nbsp;limitations&nbsp;under&nbsp;the&nbsp;License.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="zipline.finance.cancel_policy.html">zipline.finance.cancel_policy</a><br>
+<a href="zipline.finance.commission.html">zipline.finance.commission</a><br>
+</td><td width="25%" valign=top><a href="zipline.utils.events.html">zipline.utils.events</a><br>
+<a href="zipline.finance.execution.html">zipline.finance.execution</a><br>
+</td><td width="25%" valign=top><a href="zipline.utils.math_utils.html">zipline.utils.math_utils</a><br>
+<a href="zipline.finance.slippage.html">zipline.finance.slippage</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.utils.events.html#calendars">zipline.utils.events.calendars</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline.utils.events.html#date_rules">zipline.utils.events.date_rules</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline.utils.events.html#time_rules">zipline.utils.events.time_rules</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="builtins.html#tuple">builtins.tuple</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.finance.asset_restrictions.html#Restriction">zipline.finance.asset_restrictions.Restriction</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="zipline.finance.asset_restrictions.html#Restrictions">zipline.finance.asset_restrictions.Restrictions</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.finance.asset_restrictions.html#HistoricalRestrictions">zipline.finance.asset_restrictions.HistoricalRestrictions</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline.finance.asset_restrictions.html#StaticRestrictions">zipline.finance.asset_restrictions.StaticRestrictions</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="zipline.finance.cancel_policy.html#CancelPolicy">zipline.finance.cancel_policy.CancelPolicy</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.finance.cancel_policy.html#EODCancel">zipline.finance.cancel_policy.EODCancel</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline.finance.cancel_policy.html#NeverCancel">zipline.finance.cancel_policy.NeverCancel</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="zipline.finance.slippage.html#SlippageModel">zipline.finance.slippage.SlippageModel</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.finance.slippage.html#FixedBasisPointsSlippage">zipline.finance.slippage.FixedBasisPointsSlippage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline.finance.slippage.html#FixedSlippage">zipline.finance.slippage.FixedSlippage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline.finance.slippage.html#VolumeShareSlippage">zipline.finance.slippage.VolumeShareSlippage</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="EODCancel">class <strong>EODCancel</strong></a>(<a href="zipline.finance.cancel_policy.html#CancelPolicy">CancelPolicy</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>This&nbsp;policy&nbsp;cancels&nbsp;open&nbsp;orders&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;day.&nbsp;&nbsp;For&nbsp;now,<br>
+Zipline&nbsp;will&nbsp;only&nbsp;apply&nbsp;this&nbsp;policy&nbsp;to&nbsp;minutely&nbsp;simulations.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+warn_on_cancel&nbsp;:&nbsp;bool,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Should&nbsp;a&nbsp;warning&nbsp;be&nbsp;raised&nbsp;if&nbsp;this&nbsp;causes&nbsp;an&nbsp;order&nbsp;to&nbsp;be&nbsp;cancelled?<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.finance.cancel_policy.html#EODCancel">EODCancel</a></dd>
+<dd><a href="zipline.finance.cancel_policy.html#CancelPolicy">CancelPolicy</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EODCancel-__init__"><strong>__init__</strong></a>(self, warn_on_cancel=True)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="EODCancel-should_cancel"><strong>should_cancel</strong></a>(self, event)</dt><dd><tt>Should&nbsp;all&nbsp;open&nbsp;orders&nbsp;be&nbsp;cancelled?<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+event&nbsp;:&nbsp;enum-value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;event&nbsp;type,&nbsp;one&nbsp;of:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:data:`zipline.gens.sim_engine.BAR`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:data:`zipline.gens.sim_engine.DAY_START`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:data:`zipline.gens.sim_engine.DAY_END`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:data:`zipline.gens.sim_engine.MINUTE_END`<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+should_cancel&nbsp;:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Should&nbsp;all&nbsp;open&nbsp;orders&nbsp;be&nbsp;cancelled?</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="zipline.finance.cancel_policy.html#CancelPolicy">CancelPolicy</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FixedBasisPointsSlippage">class <strong>FixedBasisPointsSlippage</strong></a>(<a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Model&nbsp;slippage&nbsp;as&nbsp;a&nbsp;fixed&nbsp;percentage&nbsp;difference&nbsp;from&nbsp;historical&nbsp;minutely<br>
+close&nbsp;price,&nbsp;limiting&nbsp;the&nbsp;size&nbsp;of&nbsp;fills&nbsp;to&nbsp;a&nbsp;fixed&nbsp;percentage&nbsp;of&nbsp;historical<br>
+minutely&nbsp;volume.<br>
+&nbsp;<br>
+Orders&nbsp;to&nbsp;buy&nbsp;are&nbsp;filled&nbsp;at::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;historical_price&nbsp;*&nbsp;(1&nbsp;+&nbsp;(basis_points&nbsp;*&nbsp;0.0001))<br>
+&nbsp;<br>
+Orders&nbsp;to&nbsp;sell&nbsp;are&nbsp;filled&nbsp;at::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;historical_price&nbsp;*&nbsp;(1&nbsp;-&nbsp;(basis_points&nbsp;*&nbsp;0.0001))<br>
+&nbsp;<br>
+Fill&nbsp;sizes&nbsp;are&nbsp;capped&nbsp;at::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;historical_volume&nbsp;*&nbsp;volume_limit<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+basis_points&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;basis&nbsp;points&nbsp;of&nbsp;slippage&nbsp;to&nbsp;apply&nbsp;for&nbsp;each&nbsp;fill.&nbsp;Default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;5&nbsp;basis&nbsp;points.<br>
+volume_limit&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Fraction&nbsp;of&nbsp;trading&nbsp;volume&nbsp;that&nbsp;can&nbsp;be&nbsp;filled&nbsp;each&nbsp;minute.&nbsp;Default&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;10%&nbsp;of&nbsp;trading&nbsp;volume.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+-&nbsp;A&nbsp;basis&nbsp;point&nbsp;is&nbsp;one&nbsp;one-hundredth&nbsp;of&nbsp;a&nbsp;percent.<br>
+-&nbsp;This&nbsp;class,&nbsp;default-constructed,&nbsp;is&nbsp;zipline's&nbsp;default&nbsp;slippage&nbsp;model&nbsp;for<br>
+&nbsp;&nbsp;equities.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.finance.slippage.html#FixedBasisPointsSlippage">FixedBasisPointsSlippage</a></dd>
+<dd><a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FixedBasisPointsSlippage-__init__"><strong>__init__</strong></a>(self, basis_points=5.0, volume_limit=0.1)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="FixedBasisPointsSlippage-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="FixedBasisPointsSlippage-process_order"><strong>process_order</strong></a>(self, data, order)</dt><dd><tt>Compute&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;and&nbsp;price&nbsp;to&nbsp;fill&nbsp;for&nbsp;``order``&nbsp;in&nbsp;the<br>
+current&nbsp;minute.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+data&nbsp;:&nbsp;zipline.protocol.BarData<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;data&nbsp;for&nbsp;the&nbsp;given&nbsp;bar.<br>
+order&nbsp;:&nbsp;zipline.finance.order.Order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;order&nbsp;to&nbsp;simulate.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+execution_price&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;price&nbsp;of&nbsp;the&nbsp;fill.<br>
+execution_volume&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;shares&nbsp;that&nbsp;should&nbsp;be&nbsp;filled.&nbsp;Must&nbsp;be&nbsp;between&nbsp;``0``<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;``order.amount&nbsp;-&nbsp;order.filled``.&nbsp;If&nbsp;the&nbsp;amount&nbsp;filled&nbsp;is&nbsp;less<br>
+&nbsp;&nbsp;&nbsp;&nbsp;than&nbsp;the&nbsp;amount&nbsp;remaining,&nbsp;``order``&nbsp;will&nbsp;remain&nbsp;open&nbsp;and&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;passed&nbsp;again&nbsp;to&nbsp;this&nbsp;method&nbsp;in&nbsp;the&nbsp;next&nbsp;minute.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+zipline.finance.slippage.LiquidityExceeded<br>
+&nbsp;&nbsp;&nbsp;&nbsp;May&nbsp;be&nbsp;raised&nbsp;if&nbsp;no&nbsp;more&nbsp;orders&nbsp;should&nbsp;be&nbsp;processed&nbsp;for&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset&nbsp;during&nbsp;the&nbsp;current&nbsp;bar.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+Before&nbsp;this&nbsp;method&nbsp;is&nbsp;called,&nbsp;:attr:`volume_for_bar`&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;the<br>
+number&nbsp;of&nbsp;shares&nbsp;that&nbsp;have&nbsp;already&nbsp;been&nbsp;filled&nbsp;for&nbsp;``order.asset``&nbsp;in<br>
+the&nbsp;current&nbsp;minute.<br>
+&nbsp;<br>
+:meth:`process_order`&nbsp;is&nbsp;not&nbsp;called&nbsp;by&nbsp;the&nbsp;base&nbsp;class&nbsp;on&nbsp;bars&nbsp;for&nbsp;which<br>
+there&nbsp;was&nbsp;no&nbsp;historical&nbsp;volume.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><a name="FixedBasisPointsSlippage-asdict"><strong>asdict</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FixedBasisPointsSlippage-simulate"><strong>simulate</strong></a>(self, data, asset, orders_for_asset)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>volume_for_bar</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><strong>allowed_asset_types</strong> = (&lt;class 'zipline.assets._assets.Equity'&gt;, &lt;class 'zipline.assets._assets.Future'&gt;)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FixedSlippage">class <strong>FixedSlippage</strong></a>(<a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Simple&nbsp;model&nbsp;assuming&nbsp;a&nbsp;fixed-size&nbsp;spread&nbsp;for&nbsp;all&nbsp;assets.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+spread&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Size&nbsp;of&nbsp;the&nbsp;assumed&nbsp;spread&nbsp;for&nbsp;all&nbsp;assets.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Orders&nbsp;to&nbsp;buy&nbsp;will&nbsp;be&nbsp;filled&nbsp;at&nbsp;``close&nbsp;+&nbsp;(spread&nbsp;/&nbsp;2)``.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Orders&nbsp;to&nbsp;sell&nbsp;will&nbsp;be&nbsp;filled&nbsp;at&nbsp;``close&nbsp;-&nbsp;(spread&nbsp;/&nbsp;2)``.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+This&nbsp;model&nbsp;does&nbsp;not&nbsp;impose&nbsp;limits&nbsp;on&nbsp;the&nbsp;size&nbsp;of&nbsp;fills.&nbsp;An&nbsp;order&nbsp;for&nbsp;an<br>
+asset&nbsp;will&nbsp;always&nbsp;be&nbsp;filled&nbsp;as&nbsp;soon&nbsp;as&nbsp;any&nbsp;trading&nbsp;activity&nbsp;occurs&nbsp;in&nbsp;the<br>
+order's&nbsp;asset,&nbsp;even&nbsp;if&nbsp;the&nbsp;size&nbsp;of&nbsp;the&nbsp;order&nbsp;is&nbsp;greater&nbsp;than&nbsp;the&nbsp;historical<br>
+volume.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.finance.slippage.html#FixedSlippage">FixedSlippage</a></dd>
+<dd><a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="FixedSlippage-__init__"><strong>__init__</strong></a>(self, spread=0.0)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="FixedSlippage-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="FixedSlippage-process_order"><strong>process_order</strong></a>(self, data, order)</dt><dd><tt>Compute&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;and&nbsp;price&nbsp;to&nbsp;fill&nbsp;for&nbsp;``order``&nbsp;in&nbsp;the<br>
+current&nbsp;minute.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+data&nbsp;:&nbsp;zipline.protocol.BarData<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;data&nbsp;for&nbsp;the&nbsp;given&nbsp;bar.<br>
+order&nbsp;:&nbsp;zipline.finance.order.Order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;order&nbsp;to&nbsp;simulate.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+execution_price&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;price&nbsp;of&nbsp;the&nbsp;fill.<br>
+execution_volume&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;shares&nbsp;that&nbsp;should&nbsp;be&nbsp;filled.&nbsp;Must&nbsp;be&nbsp;between&nbsp;``0``<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;``order.amount&nbsp;-&nbsp;order.filled``.&nbsp;If&nbsp;the&nbsp;amount&nbsp;filled&nbsp;is&nbsp;less<br>
+&nbsp;&nbsp;&nbsp;&nbsp;than&nbsp;the&nbsp;amount&nbsp;remaining,&nbsp;``order``&nbsp;will&nbsp;remain&nbsp;open&nbsp;and&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;passed&nbsp;again&nbsp;to&nbsp;this&nbsp;method&nbsp;in&nbsp;the&nbsp;next&nbsp;minute.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+zipline.finance.slippage.LiquidityExceeded<br>
+&nbsp;&nbsp;&nbsp;&nbsp;May&nbsp;be&nbsp;raised&nbsp;if&nbsp;no&nbsp;more&nbsp;orders&nbsp;should&nbsp;be&nbsp;processed&nbsp;for&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset&nbsp;during&nbsp;the&nbsp;current&nbsp;bar.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+Before&nbsp;this&nbsp;method&nbsp;is&nbsp;called,&nbsp;:attr:`volume_for_bar`&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;the<br>
+number&nbsp;of&nbsp;shares&nbsp;that&nbsp;have&nbsp;already&nbsp;been&nbsp;filled&nbsp;for&nbsp;``order.asset``&nbsp;in<br>
+the&nbsp;current&nbsp;minute.<br>
+&nbsp;<br>
+:meth:`process_order`&nbsp;is&nbsp;not&nbsp;called&nbsp;by&nbsp;the&nbsp;base&nbsp;class&nbsp;on&nbsp;bars&nbsp;for&nbsp;which<br>
+there&nbsp;was&nbsp;no&nbsp;historical&nbsp;volume.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><a name="FixedSlippage-asdict"><strong>asdict</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="FixedSlippage-simulate"><strong>simulate</strong></a>(self, data, asset, orders_for_asset)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>volume_for_bar</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><strong>allowed_asset_types</strong> = (&lt;class 'zipline.assets._assets.Equity'&gt;, &lt;class 'zipline.assets._assets.Future'&gt;)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="HistoricalRestrictions">class <strong>HistoricalRestrictions</strong></a>(<a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Historical&nbsp;restrictions&nbsp;stored&nbsp;in&nbsp;memory&nbsp;with&nbsp;effective&nbsp;dates&nbsp;for&nbsp;each<br>
+asset.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+restrictions&nbsp;:&nbsp;iterable&nbsp;of&nbsp;namedtuple&nbsp;<a href="#Restriction">Restriction</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;restrictions,&nbsp;each&nbsp;defined&nbsp;by&nbsp;an&nbsp;asset,&nbsp;effective&nbsp;date&nbsp;and&nbsp;state<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.finance.asset_restrictions.html#HistoricalRestrictions">HistoricalRestrictions</a></dd>
+<dd><a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="HistoricalRestrictions-__init__"><strong>__init__</strong></a>(self, restrictions)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="HistoricalRestrictions-is_restricted"><strong>is_restricted</strong></a>(self, assets, dt)</dt><dd><tt>Returns&nbsp;whether&nbsp;or&nbsp;not&nbsp;an&nbsp;asset&nbsp;or&nbsp;iterable&nbsp;of&nbsp;assets&nbsp;is&nbsp;restricted<br>
+on&nbsp;a&nbsp;dt.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a>:<br>
+<dl><dt><a name="HistoricalRestrictions-__or__"><strong>__or__</strong></a>(self, other_restriction)</dt><dd><tt>Base&nbsp;implementation&nbsp;for&nbsp;combining&nbsp;two&nbsp;restrictions.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NeverCancel">class <strong>NeverCancel</strong></a>(<a href="zipline.finance.cancel_policy.html#CancelPolicy">CancelPolicy</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Orders&nbsp;are&nbsp;never&nbsp;automatically&nbsp;canceled.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.finance.cancel_policy.html#NeverCancel">NeverCancel</a></dd>
+<dd><a href="zipline.finance.cancel_policy.html#CancelPolicy">CancelPolicy</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="NeverCancel-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="NeverCancel-should_cancel"><strong>should_cancel</strong></a>(self, event)</dt><dd><tt>Should&nbsp;all&nbsp;open&nbsp;orders&nbsp;be&nbsp;cancelled?<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+event&nbsp;:&nbsp;enum-value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;event&nbsp;type,&nbsp;one&nbsp;of:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:data:`zipline.gens.sim_engine.BAR`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:data:`zipline.gens.sim_engine.DAY_START`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:data:`zipline.gens.sim_engine.DAY_END`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:data:`zipline.gens.sim_engine.MINUTE_END`<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+should_cancel&nbsp;:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Should&nbsp;all&nbsp;open&nbsp;orders&nbsp;be&nbsp;cancelled?</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="zipline.finance.cancel_policy.html#CancelPolicy">CancelPolicy</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Restriction">class <strong>Restriction</strong></a>(<a href="builtins.html#tuple">builtins.tuple</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Restriction">Restriction</a>(asset,&nbsp;effective_date,&nbsp;state)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.finance.asset_restrictions.html#Restriction">Restriction</a></dd>
+<dd><a href="builtins.html#tuple">builtins.tuple</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Restriction-__getnewargs__"><strong>__getnewargs__</strong></a>(self)</dt><dd><tt>Return&nbsp;self&nbsp;as&nbsp;a&nbsp;plain&nbsp;<a href="builtins.html#tuple">tuple</a>.&nbsp;&nbsp;Used&nbsp;by&nbsp;copy&nbsp;and&nbsp;pickle.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;nicely&nbsp;formatted&nbsp;representation&nbsp;string</tt></dd></dl>
+
+<dl><dt><a name="Restriction-_asdict"><strong>_asdict</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;new&nbsp;OrderedDict&nbsp;which&nbsp;maps&nbsp;field&nbsp;names&nbsp;to&nbsp;their&nbsp;values.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-_replace"><strong>_replace</strong></a>(_self, **kwds)</dt><dd><tt>Return&nbsp;a&nbsp;new&nbsp;<a href="#Restriction">Restriction</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;replacing&nbsp;specified&nbsp;fields&nbsp;with&nbsp;new&nbsp;values</tt></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Restriction-_make"><strong>_make</strong></a>(iterable, new=&lt;built-in method __new__ of type object at 0x0000000075AA1A50&gt;, len=&lt;built-in function len&gt;)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Make&nbsp;a&nbsp;new&nbsp;<a href="#Restriction">Restriction</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;sequence&nbsp;or&nbsp;iterable</tt></dd></dl>
+
+<hr>
+Static methods defined here:<br>
+<dl><dt><a name="Restriction-__new__"><strong>__new__</strong></a>(_cls, asset, effective_date, state)</dt><dd><tt>Create&nbsp;new&nbsp;instance&nbsp;of&nbsp;<a href="#Restriction">Restriction</a>(asset,&nbsp;effective_date,&nbsp;state)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>asset</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;0</tt></dd>
+</dl>
+<dl><dt><strong>effective_date</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;1</tt></dd>
+</dl>
+<dl><dt><strong>state</strong></dt>
+<dd><tt>Alias&nbsp;for&nbsp;field&nbsp;number&nbsp;2</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>_fields</strong> = ('asset', 'effective_date', 'state')</dl>
+
+<dl><dt><strong>_source</strong> = "from builtins import property as _property, tupl..._itemgetter(2), doc='Alias for field number 2')<font color="#c040c0">\n\n</font>"</dl>
+
+<hr>
+Methods inherited from <a href="builtins.html#tuple">builtins.tuple</a>:<br>
+<dl><dt><a name="Restriction-__add__"><strong>__add__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self+value.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;key&nbsp;in&nbsp;self.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__eq__"><strong>__eq__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self==value.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__ge__"><strong>__ge__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;=value.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;self[key].</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__gt__"><strong>__gt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&gt;value.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__hash__"><strong>__hash__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;hash(self).</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><tt>Implement&nbsp;iter(self).</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__le__"><strong>__le__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;=value.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;len(self).</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__lt__"><strong>__lt__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self&lt;value.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__mul__"><strong>__mul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self*value.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__ne__"><strong>__ne__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;self!=value.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-__rmul__"><strong>__rmul__</strong></a>(self, value, /)</dt><dd><tt>Return&nbsp;value*self.</tt></dd></dl>
+
+<dl><dt><a name="Restriction-count"><strong>count</strong></a>(...)</dt><dd><tt>T.<a href="#Restriction-count">count</a>(value)&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Restriction-index"><strong>index</strong></a>(...)</dt><dd><tt>T.<a href="#Restriction-index">index</a>(value,&nbsp;[start,&nbsp;[stop]])&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="StaticRestrictions">class <strong>StaticRestrictions</strong></a>(<a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Static&nbsp;restrictions&nbsp;stored&nbsp;in&nbsp;memory&nbsp;that&nbsp;are&nbsp;constant&nbsp;regardless&nbsp;of&nbsp;dt<br>
+for&nbsp;each&nbsp;asset.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+restricted_list&nbsp;:&nbsp;iterable&nbsp;of&nbsp;assets<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;assets&nbsp;to&nbsp;be&nbsp;restricted<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.finance.asset_restrictions.html#StaticRestrictions">StaticRestrictions</a></dd>
+<dd><a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="StaticRestrictions-__init__"><strong>__init__</strong></a>(self, restricted_list)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="StaticRestrictions-is_restricted"><strong>is_restricted</strong></a>(self, assets, dt)</dt><dd><tt>An&nbsp;asset&nbsp;is&nbsp;restricted&nbsp;for&nbsp;all&nbsp;dts&nbsp;if&nbsp;it&nbsp;is&nbsp;in&nbsp;the&nbsp;static&nbsp;list.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a>:<br>
+<dl><dt><a name="StaticRestrictions-__or__"><strong>__or__</strong></a>(self, other_restriction)</dt><dd><tt>Base&nbsp;implementation&nbsp;for&nbsp;combining&nbsp;two&nbsp;restrictions.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="VolumeShareSlippage">class <strong>VolumeShareSlippage</strong></a>(<a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Model&nbsp;slippage&nbsp;as&nbsp;a&nbsp;quadratic&nbsp;function&nbsp;of&nbsp;percentage&nbsp;of&nbsp;historical&nbsp;volume.<br>
+&nbsp;<br>
+Orders&nbsp;to&nbsp;buy&nbsp;will&nbsp;be&nbsp;filled&nbsp;at::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;price&nbsp;*&nbsp;(1&nbsp;+&nbsp;price_impact&nbsp;*&nbsp;(volume_share&nbsp;**&nbsp;2))<br>
+&nbsp;<br>
+Orders&nbsp;to&nbsp;sell&nbsp;will&nbsp;be&nbsp;filled&nbsp;at::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;price&nbsp;*&nbsp;(1&nbsp;-&nbsp;price_impact&nbsp;*&nbsp;(volume_share&nbsp;**&nbsp;2))<br>
+&nbsp;<br>
+where&nbsp;``price``&nbsp;is&nbsp;the&nbsp;close&nbsp;price&nbsp;for&nbsp;the&nbsp;bar,&nbsp;and&nbsp;``volume_share``&nbsp;is&nbsp;the<br>
+percentage&nbsp;of&nbsp;minutely&nbsp;volume&nbsp;filled,&nbsp;up&nbsp;to&nbsp;a&nbsp;max&nbsp;of&nbsp;``volume_limit``.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+volume_limit&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Maximum&nbsp;percent&nbsp;of&nbsp;historical&nbsp;volume&nbsp;that&nbsp;can&nbsp;fill&nbsp;in&nbsp;each&nbsp;bar.&nbsp;0.5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;means&nbsp;50%&nbsp;of&nbsp;historical&nbsp;volume.&nbsp;1.0&nbsp;means&nbsp;100%.&nbsp;Default&nbsp;is&nbsp;0.025&nbsp;(i.e.,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.5%).<br>
+price_impact&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Scaling&nbsp;coefficient&nbsp;for&nbsp;price&nbsp;impact.&nbsp;Larger&nbsp;values&nbsp;will&nbsp;result&nbsp;in&nbsp;more<br>
+&nbsp;&nbsp;&nbsp;&nbsp;simulated&nbsp;price&nbsp;impact.&nbsp;Smaller&nbsp;values&nbsp;will&nbsp;result&nbsp;in&nbsp;less&nbsp;simulated<br>
+&nbsp;&nbsp;&nbsp;&nbsp;price&nbsp;impact.&nbsp;Default&nbsp;is&nbsp;0.1.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="zipline.finance.slippage.html#VolumeShareSlippage">VolumeShareSlippage</a></dd>
+<dd><a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="VolumeShareSlippage-__init__"><strong>__init__</strong></a>(self, volume_limit=0.025, price_impact=0.1)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="VolumeShareSlippage-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="VolumeShareSlippage-process_order"><strong>process_order</strong></a>(self, data, order)</dt><dd><tt>Compute&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;and&nbsp;price&nbsp;to&nbsp;fill&nbsp;for&nbsp;``order``&nbsp;in&nbsp;the<br>
+current&nbsp;minute.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+data&nbsp;:&nbsp;zipline.protocol.BarData<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;data&nbsp;for&nbsp;the&nbsp;given&nbsp;bar.<br>
+order&nbsp;:&nbsp;zipline.finance.order.Order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;order&nbsp;to&nbsp;simulate.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+execution_price&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;price&nbsp;of&nbsp;the&nbsp;fill.<br>
+execution_volume&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;shares&nbsp;that&nbsp;should&nbsp;be&nbsp;filled.&nbsp;Must&nbsp;be&nbsp;between&nbsp;``0``<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;``order.amount&nbsp;-&nbsp;order.filled``.&nbsp;If&nbsp;the&nbsp;amount&nbsp;filled&nbsp;is&nbsp;less<br>
+&nbsp;&nbsp;&nbsp;&nbsp;than&nbsp;the&nbsp;amount&nbsp;remaining,&nbsp;``order``&nbsp;will&nbsp;remain&nbsp;open&nbsp;and&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;passed&nbsp;again&nbsp;to&nbsp;this&nbsp;method&nbsp;in&nbsp;the&nbsp;next&nbsp;minute.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+zipline.finance.slippage.LiquidityExceeded<br>
+&nbsp;&nbsp;&nbsp;&nbsp;May&nbsp;be&nbsp;raised&nbsp;if&nbsp;no&nbsp;more&nbsp;orders&nbsp;should&nbsp;be&nbsp;processed&nbsp;for&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset&nbsp;during&nbsp;the&nbsp;current&nbsp;bar.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+Before&nbsp;this&nbsp;method&nbsp;is&nbsp;called,&nbsp;:attr:`volume_for_bar`&nbsp;will&nbsp;be&nbsp;set&nbsp;to&nbsp;the<br>
+number&nbsp;of&nbsp;shares&nbsp;that&nbsp;have&nbsp;already&nbsp;been&nbsp;filled&nbsp;for&nbsp;``order.asset``&nbsp;in<br>
+the&nbsp;current&nbsp;minute.<br>
+&nbsp;<br>
+:meth:`process_order`&nbsp;is&nbsp;not&nbsp;called&nbsp;by&nbsp;the&nbsp;base&nbsp;class&nbsp;on&nbsp;bars&nbsp;for&nbsp;which<br>
+there&nbsp;was&nbsp;no&nbsp;historical&nbsp;volume.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><a name="VolumeShareSlippage-asdict"><strong>asdict</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="VolumeShareSlippage-simulate"><strong>simulate</strong></a>(self, data, asset, orders_for_asset)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>volume_for_bar</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>:<br>
+<dl><dt><strong>allowed_asset_types</strong> = (&lt;class 'zipline.assets._assets.Equity'&gt;, &lt;class 'zipline.assets._assets.Future'&gt;)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="calendars">class <strong>calendars</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>US_EQUITIES</strong> = sentinel('US_EQUITIES')</dl>
+
+<dl><dt><strong>US_FUTURES</strong> = sentinel('US_FUTURES')</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="date_rules">class <strong>date_rules</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Factories&nbsp;for&nbsp;date-based&nbsp;:func:`~zipline.api.schedule_function`&nbsp;rules.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`~zipline.api.schedule_function`<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Static methods defined here:<br>
+<dl><dt><a name="date_rules-every_day"><strong>every_day</strong></a>()</dt><dd><tt>Create&nbsp;a&nbsp;rule&nbsp;that&nbsp;triggers&nbsp;every&nbsp;day.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+rule&nbsp;:&nbsp;zipline.utils.events.EventRule</tt></dd></dl>
+
+<dl><dt><a name="date_rules-month_end"><strong>month_end</strong></a>(days_offset=0)</dt><dd><tt>Create&nbsp;a&nbsp;rule&nbsp;that&nbsp;triggers&nbsp;a&nbsp;fixed&nbsp;number&nbsp;of&nbsp;trading&nbsp;days&nbsp;before&nbsp;the<br>
+end&nbsp;of&nbsp;each&nbsp;month.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+days_offset&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;trading&nbsp;days&nbsp;prior&nbsp;to&nbsp;month&nbsp;end&nbsp;to&nbsp;trigger.&nbsp;Default&nbsp;is&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i.e.,&nbsp;trigger&nbsp;on&nbsp;the&nbsp;last&nbsp;day&nbsp;of&nbsp;the&nbsp;month.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+rule&nbsp;:&nbsp;zipline.utils.events.EventRule</tt></dd></dl>
+
+<dl><dt><a name="date_rules-month_start"><strong>month_start</strong></a>(days_offset=0)</dt><dd><tt>Create&nbsp;a&nbsp;rule&nbsp;that&nbsp;triggers&nbsp;a&nbsp;fixed&nbsp;number&nbsp;of&nbsp;trading&nbsp;days&nbsp;after&nbsp;the<br>
+start&nbsp;of&nbsp;each&nbsp;month.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+days_offset&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;trading&nbsp;days&nbsp;to&nbsp;wait&nbsp;before&nbsp;triggering&nbsp;each<br>
+&nbsp;&nbsp;&nbsp;&nbsp;month.&nbsp;Default&nbsp;is&nbsp;0,&nbsp;i.e.,&nbsp;trigger&nbsp;on&nbsp;the&nbsp;first&nbsp;trading&nbsp;day&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;month.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+rule&nbsp;:&nbsp;zipline.utils.events.EventRule</tt></dd></dl>
+
+<dl><dt><a name="date_rules-week_end"><strong>week_end</strong></a>(days_offset=0)</dt><dd><tt>Create&nbsp;a&nbsp;rule&nbsp;that&nbsp;triggers&nbsp;a&nbsp;fixed&nbsp;number&nbsp;of&nbsp;trading&nbsp;days&nbsp;before&nbsp;the<br>
+end&nbsp;of&nbsp;each&nbsp;week.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+days_offset&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;trading&nbsp;days&nbsp;prior&nbsp;to&nbsp;week&nbsp;end&nbsp;to&nbsp;trigger.&nbsp;Default&nbsp;is&nbsp;0,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i.e.,&nbsp;trigger&nbsp;on&nbsp;the&nbsp;last&nbsp;trading&nbsp;day&nbsp;of&nbsp;the&nbsp;week.</tt></dd></dl>
+
+<dl><dt><a name="date_rules-week_start"><strong>week_start</strong></a>(days_offset=0)</dt><dd><tt>Create&nbsp;a&nbsp;rule&nbsp;that&nbsp;triggers&nbsp;a&nbsp;fixed&nbsp;number&nbsp;of&nbsp;trading&nbsp;days&nbsp;after&nbsp;the<br>
+start&nbsp;of&nbsp;each&nbsp;week.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+days_offset&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;trading&nbsp;days&nbsp;to&nbsp;wait&nbsp;before&nbsp;triggering&nbsp;each&nbsp;week.&nbsp;Default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;0,&nbsp;i.e.,&nbsp;trigger&nbsp;on&nbsp;the&nbsp;first&nbsp;trading&nbsp;day&nbsp;of&nbsp;the&nbsp;week.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="time_rules">class <strong>time_rules</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Factories&nbsp;for&nbsp;time-based&nbsp;:func:`~zipline.api.schedule_function`&nbsp;rules.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`~zipline.api.schedule_function`<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Static methods defined here:<br>
+<dl><dt><a name="time_rules-market_close"><strong>market_close</strong></a>(offset=None, hours=None, minutes=None)</dt><dd><tt>Create&nbsp;a&nbsp;rule&nbsp;that&nbsp;triggers&nbsp;at&nbsp;a&nbsp;fixed&nbsp;offset&nbsp;from&nbsp;market&nbsp;close.<br>
+&nbsp;<br>
+The&nbsp;offset&nbsp;can&nbsp;be&nbsp;specified&nbsp;either&nbsp;as&nbsp;a&nbsp;:class:`datetime.timedelta`,&nbsp;or<br>
+as&nbsp;a&nbsp;number&nbsp;of&nbsp;hours&nbsp;and&nbsp;minutes.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+offset&nbsp;:&nbsp;datetime.timedelta,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;passed,&nbsp;the&nbsp;offset&nbsp;from&nbsp;market&nbsp;close&nbsp;at&nbsp;which&nbsp;to&nbsp;trigger.&nbsp;Must<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;at&nbsp;least&nbsp;1&nbsp;minute.<br>
+hours&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;passed,&nbsp;number&nbsp;of&nbsp;hours&nbsp;to&nbsp;wait&nbsp;before&nbsp;market&nbsp;close.<br>
+minutes&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;passed,&nbsp;number&nbsp;of&nbsp;minutes&nbsp;to&nbsp;wait&nbsp;before&nbsp;market&nbsp;close.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+rule&nbsp;:&nbsp;zipline.utils.events.EventRule<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+If&nbsp;no&nbsp;arguments&nbsp;are&nbsp;passed,&nbsp;the&nbsp;default&nbsp;offset&nbsp;is&nbsp;one&nbsp;minute&nbsp;before<br>
+market&nbsp;close.<br>
+&nbsp;<br>
+If&nbsp;``offset``&nbsp;is&nbsp;passed,&nbsp;``hours``&nbsp;and&nbsp;``minutes``&nbsp;must&nbsp;not&nbsp;be<br>
+passed.&nbsp;Conversely,&nbsp;if&nbsp;either&nbsp;``hours``&nbsp;or&nbsp;``minutes``&nbsp;are&nbsp;passed,<br>
+``offset``&nbsp;must&nbsp;not&nbsp;be&nbsp;passed.</tt></dd></dl>
+
+<dl><dt><a name="time_rules-market_open"><strong>market_open</strong></a>(offset=None, hours=None, minutes=None)</dt><dd><tt>Create&nbsp;a&nbsp;rule&nbsp;that&nbsp;triggers&nbsp;at&nbsp;a&nbsp;fixed&nbsp;offset&nbsp;from&nbsp;market&nbsp;open.<br>
+&nbsp;<br>
+The&nbsp;offset&nbsp;can&nbsp;be&nbsp;specified&nbsp;either&nbsp;as&nbsp;a&nbsp;:class:`datetime.timedelta`,&nbsp;or<br>
+as&nbsp;a&nbsp;number&nbsp;of&nbsp;hours&nbsp;and&nbsp;minutes.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+offset&nbsp;:&nbsp;datetime.timedelta,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;passed,&nbsp;the&nbsp;offset&nbsp;from&nbsp;market&nbsp;open&nbsp;at&nbsp;which&nbsp;to&nbsp;trigger.&nbsp;Must&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;&nbsp;at&nbsp;least&nbsp;1&nbsp;minute.<br>
+hours&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;passed,&nbsp;number&nbsp;of&nbsp;hours&nbsp;to&nbsp;wait&nbsp;after&nbsp;market&nbsp;open.<br>
+minutes&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;passed,&nbsp;number&nbsp;of&nbsp;minutes&nbsp;to&nbsp;wait&nbsp;after&nbsp;market&nbsp;open.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+rule&nbsp;:&nbsp;zipline.utils.events.EventRule<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+If&nbsp;no&nbsp;arguments&nbsp;are&nbsp;passed,&nbsp;the&nbsp;default&nbsp;offset&nbsp;is&nbsp;one&nbsp;minute&nbsp;after<br>
+market&nbsp;open.<br>
+&nbsp;<br>
+If&nbsp;``offset``&nbsp;is&nbsp;passed,&nbsp;``hours``&nbsp;and&nbsp;``minutes``&nbsp;must&nbsp;not&nbsp;be<br>
+passed.&nbsp;Conversely,&nbsp;if&nbsp;either&nbsp;``hours``&nbsp;or&nbsp;``minutes``&nbsp;are&nbsp;passed,<br>
+``offset``&nbsp;must&nbsp;not&nbsp;be&nbsp;passed.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>every_minute</strong> = &lt;class 'zipline.utils.events.Always'&gt;<dd><tt>A&nbsp;rule&nbsp;that&nbsp;always&nbsp;triggers.</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-attach_pipeline"><strong>attach_pipeline</strong></a>(self, pipeline, name, chunks=None, eager=True)</dt><dd><tt>Register&nbsp;a&nbsp;pipeline&nbsp;to&nbsp;be&nbsp;computed&nbsp;at&nbsp;the&nbsp;start&nbsp;of&nbsp;each&nbsp;day.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+pipeline&nbsp;:&nbsp;Pipeline<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;pipeline&nbsp;to&nbsp;have&nbsp;computed.<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;pipeline.<br>
+chunks&nbsp;:&nbsp;int&nbsp;or&nbsp;iterator,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;days&nbsp;to&nbsp;compute&nbsp;pipeline&nbsp;results&nbsp;for.&nbsp;Increasing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;number&nbsp;will&nbsp;make&nbsp;it&nbsp;longer&nbsp;to&nbsp;get&nbsp;the&nbsp;first&nbsp;results&nbsp;but<br>
+&nbsp;&nbsp;&nbsp;&nbsp;may&nbsp;improve&nbsp;the&nbsp;total&nbsp;runtime&nbsp;of&nbsp;the&nbsp;simulation.&nbsp;If&nbsp;an&nbsp;iterator<br>
+&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;passed,&nbsp;we&nbsp;will&nbsp;run&nbsp;in&nbsp;chunks&nbsp;based&nbsp;on&nbsp;values&nbsp;of&nbsp;the&nbsp;iterator.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Default&nbsp;is&nbsp;True.<br>
+eager&nbsp;:&nbsp;bool,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Whether&nbsp;or&nbsp;not&nbsp;to&nbsp;compute&nbsp;this&nbsp;pipeline&nbsp;prior&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;before_trading_start.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+pipeline&nbsp;:&nbsp;Pipeline<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;pipeline&nbsp;that&nbsp;was&nbsp;attached&nbsp;unchanged.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`zipline.api.pipeline_output`</tt></dd></dl>
+ <dl><dt><a name="-batch_market_order"><strong>batch_market_order</strong></a>(self, share_counts)</dt><dd><tt>Place&nbsp;a&nbsp;batch&nbsp;market&nbsp;order&nbsp;for&nbsp;multiple&nbsp;assets.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+share_counts&nbsp;:&nbsp;pd.Series[Asset&nbsp;-&gt;&nbsp;int]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Map&nbsp;from&nbsp;asset&nbsp;to&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;order&nbsp;for&nbsp;that&nbsp;asset.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_ids&nbsp;:&nbsp;pd.Index[str]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Index&nbsp;of&nbsp;ids&nbsp;for&nbsp;newly-created&nbsp;orders.</tt></dd></dl>
+ <dl><dt><a name="-cancel_order"><strong>cancel_order</strong></a>(self, order_param)</dt><dd><tt>Cancel&nbsp;an&nbsp;open&nbsp;order.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+order_param&nbsp;:&nbsp;str&nbsp;or&nbsp;Order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;order_id&nbsp;or&nbsp;order&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;cancel.</tt></dd></dl>
+ <dl><dt><a name="-continuous_future"><strong>continuous_future</strong></a>(self, root_symbol_str, offset=0, roll='volume', adjustment='mul')</dt><dd><tt>Create&nbsp;a&nbsp;specifier&nbsp;for&nbsp;a&nbsp;continuous&nbsp;contract.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+root_symbol_str&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;root&nbsp;symbol&nbsp;for&nbsp;the&nbsp;future&nbsp;chain.<br>
+&nbsp;<br>
+offset&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;distance&nbsp;from&nbsp;the&nbsp;primary&nbsp;contract.&nbsp;Default&nbsp;is&nbsp;0.<br>
+&nbsp;<br>
+roll_style&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;How&nbsp;rolls&nbsp;are&nbsp;determined.&nbsp;Default&nbsp;is&nbsp;'volume'.<br>
+&nbsp;<br>
+adjustment&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Method&nbsp;for&nbsp;adjusting&nbsp;lookback&nbsp;prices&nbsp;between&nbsp;rolls.&nbsp;Options&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'mul',&nbsp;'add',&nbsp;and&nbsp;None.&nbsp;Default&nbsp;is&nbsp;'mul'.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+continuous_future&nbsp;:&nbsp;zipline.assets.ContinuousFuture<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;continuous&nbsp;future&nbsp;specifier.</tt></dd></dl>
+ <dl><dt><a name="-fetch_csv"><strong>fetch_csv</strong></a>(self, url, pre_func=None, post_func=None, date_column='date', date_format=None, timezone='UTC', symbol=None, mask=True, symbol_column=None, special_params_checker=None, country_code=None, **kwargs)</dt><dd><tt>Fetch&nbsp;a&nbsp;csv&nbsp;from&nbsp;a&nbsp;remote&nbsp;url&nbsp;and&nbsp;register&nbsp;the&nbsp;data&nbsp;so&nbsp;that&nbsp;it&nbsp;is<br>
+queryable&nbsp;from&nbsp;the&nbsp;``data``&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+url&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;url&nbsp;of&nbsp;the&nbsp;csv&nbsp;file&nbsp;to&nbsp;load.<br>
+pre_func&nbsp;:&nbsp;callable[pd.DataFrame&nbsp;-&gt;&nbsp;pd.DataFrame],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;callback&nbsp;to&nbsp;allow&nbsp;preprocessing&nbsp;the&nbsp;raw&nbsp;data&nbsp;returned&nbsp;from<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fetch_csv&nbsp;before&nbsp;dates&nbsp;are&nbsp;paresed&nbsp;or&nbsp;symbols&nbsp;are&nbsp;mapped.<br>
+post_func&nbsp;:&nbsp;callable[pd.DataFrame&nbsp;-&gt;&nbsp;pd.DataFrame],&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;callback&nbsp;to&nbsp;allow&nbsp;postprocessing&nbsp;of&nbsp;the&nbsp;data&nbsp;after&nbsp;dates&nbsp;and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;symbols&nbsp;have&nbsp;been&nbsp;mapped.<br>
+date_column&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;column&nbsp;in&nbsp;the&nbsp;preprocessed&nbsp;dataframe&nbsp;containing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;datetime&nbsp;information&nbsp;to&nbsp;map&nbsp;the&nbsp;data.<br>
+date_format&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;format&nbsp;of&nbsp;the&nbsp;dates&nbsp;in&nbsp;the&nbsp;``date_column``.&nbsp;If&nbsp;not&nbsp;provided<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``fetch_csv``&nbsp;will&nbsp;attempt&nbsp;to&nbsp;infer&nbsp;the&nbsp;format.&nbsp;For&nbsp;information<br>
+&nbsp;&nbsp;&nbsp;&nbsp;about&nbsp;the&nbsp;format&nbsp;of&nbsp;this&nbsp;string,&nbsp;see&nbsp;:func:`pandas.read_csv`.<br>
+timezone&nbsp;:&nbsp;tzinfo&nbsp;or&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;timezone&nbsp;for&nbsp;the&nbsp;datetime&nbsp;in&nbsp;the&nbsp;``date_column``.<br>
+symbol&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;the&nbsp;data&nbsp;is&nbsp;about&nbsp;a&nbsp;new&nbsp;asset&nbsp;or&nbsp;index&nbsp;then&nbsp;this&nbsp;string&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;the&nbsp;name&nbsp;used&nbsp;to&nbsp;identify&nbsp;the&nbsp;values&nbsp;in&nbsp;``data``.&nbsp;For&nbsp;example,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;one&nbsp;may&nbsp;use&nbsp;``fetch_csv``&nbsp;to&nbsp;load&nbsp;data&nbsp;for&nbsp;VIX,&nbsp;then&nbsp;this&nbsp;field<br>
+&nbsp;&nbsp;&nbsp;&nbsp;could&nbsp;be&nbsp;the&nbsp;string&nbsp;``'VIX'``.<br>
+mask&nbsp;:&nbsp;bool,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Drop&nbsp;any&nbsp;rows&nbsp;which&nbsp;cannot&nbsp;be&nbsp;symbol&nbsp;mapped.<br>
+symbol_column&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;the&nbsp;data&nbsp;is&nbsp;attaching&nbsp;some&nbsp;new&nbsp;attribute&nbsp;to&nbsp;each&nbsp;asset&nbsp;then&nbsp;this<br>
+&nbsp;&nbsp;&nbsp;&nbsp;argument&nbsp;is&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;column&nbsp;in&nbsp;the&nbsp;preprocessed&nbsp;dataframe<br>
+&nbsp;&nbsp;&nbsp;&nbsp;containing&nbsp;the&nbsp;symbols.&nbsp;This&nbsp;will&nbsp;be&nbsp;used&nbsp;along&nbsp;with&nbsp;the&nbsp;date<br>
+&nbsp;&nbsp;&nbsp;&nbsp;information&nbsp;to&nbsp;map&nbsp;the&nbsp;sids&nbsp;in&nbsp;the&nbsp;asset&nbsp;finder.<br>
+country_code&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Country&nbsp;code&nbsp;to&nbsp;use&nbsp;to&nbsp;disambiguate&nbsp;symbol&nbsp;lookups.<br>
+**kwargs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Forwarded&nbsp;to&nbsp;:func:`pandas.read_csv`.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+csv_data_source&nbsp;:&nbsp;zipline.sources.requests_csv.PandasRequestsCSV<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;requests&nbsp;source&nbsp;that&nbsp;will&nbsp;pull&nbsp;data&nbsp;from&nbsp;the&nbsp;url&nbsp;specified.</tt></dd></dl>
+ <dl><dt><a name="-future_symbol"><strong>future_symbol</strong></a>(self, symbol)</dt><dd><tt>Lookup&nbsp;a&nbsp;futures&nbsp;contract&nbsp;with&nbsp;a&nbsp;given&nbsp;symbol.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+symbol&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;symbol&nbsp;of&nbsp;the&nbsp;desired&nbsp;contract.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+future&nbsp;:&nbsp;zipline.assets.Future<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;future&nbsp;that&nbsp;trades&nbsp;with&nbsp;the&nbsp;name&nbsp;``symbol``.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+SymbolNotFound<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;no&nbsp;contract&nbsp;named&nbsp;'symbol'&nbsp;is&nbsp;found.</tt></dd></dl>
+ <dl><dt><a name="-get_datetime"><strong>get_datetime</strong></a>(self, tz=None)</dt><dd><tt>Returns&nbsp;the&nbsp;current&nbsp;simulation&nbsp;datetime.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+tz&nbsp;:&nbsp;tzinfo&nbsp;or&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;timezone&nbsp;to&nbsp;return&nbsp;the&nbsp;datetime&nbsp;in.&nbsp;This&nbsp;defaults&nbsp;to&nbsp;utc.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+dt&nbsp;:&nbsp;datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;current&nbsp;simulation&nbsp;datetime&nbsp;converted&nbsp;to&nbsp;``tz``.</tt></dd></dl>
+ <dl><dt><a name="-get_environment"><strong>get_environment</strong></a>(self, field='platform')</dt><dd><tt>Query&nbsp;the&nbsp;execution&nbsp;environment.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+field&nbsp;:&nbsp;{'platform',&nbsp;'arena',&nbsp;'data_frequency',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'start',&nbsp;'end',&nbsp;'capital_base',&nbsp;'platform',&nbsp;'*'}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;field&nbsp;to&nbsp;query.&nbsp;The&nbsp;options&nbsp;have&nbsp;the&nbsp;following&nbsp;meanings:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arena&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;arena&nbsp;from&nbsp;the&nbsp;simulation&nbsp;parameters.&nbsp;This&nbsp;will&nbsp;normally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;``'backtest'``&nbsp;but&nbsp;some&nbsp;systems&nbsp;may&nbsp;use&nbsp;this&nbsp;distinguish<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;live&nbsp;trading&nbsp;from&nbsp;backtesting.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_frequency&nbsp;:&nbsp;{'daily',&nbsp;'minute'}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_frequency&nbsp;tells&nbsp;the&nbsp;algorithm&nbsp;if&nbsp;it&nbsp;is&nbsp;running&nbsp;with<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daily&nbsp;data&nbsp;or&nbsp;minute&nbsp;data.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;:&nbsp;datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;start&nbsp;date&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;:&nbsp;datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;end&nbsp;date&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;capital_base&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;starting&nbsp;capital&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;platform&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;platform&nbsp;that&nbsp;the&nbsp;code&nbsp;is&nbsp;running&nbsp;on.&nbsp;By&nbsp;default&nbsp;this<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;be&nbsp;the&nbsp;string&nbsp;'zipline'.&nbsp;This&nbsp;can&nbsp;allow&nbsp;algorithms&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;know&nbsp;if&nbsp;they&nbsp;are&nbsp;running&nbsp;on&nbsp;the&nbsp;Quantopian&nbsp;platform&nbsp;instead.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;:&nbsp;dict[str&nbsp;-&gt;&nbsp;any]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;all&nbsp;of&nbsp;the&nbsp;fields&nbsp;in&nbsp;a&nbsp;dictionary.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+val&nbsp;:&nbsp;any<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;value&nbsp;for&nbsp;the&nbsp;field&nbsp;queried.&nbsp;See&nbsp;above&nbsp;for&nbsp;more&nbsp;information.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+ValueError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;``field``&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;option.</tt></dd></dl>
+ <dl><dt><a name="-get_open_orders"><strong>get_open_orders</strong></a>(self, asset=None)</dt><dd><tt>Retrieve&nbsp;all&nbsp;of&nbsp;the&nbsp;current&nbsp;open&nbsp;orders.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;passed&nbsp;and&nbsp;not&nbsp;None,&nbsp;return&nbsp;only&nbsp;the&nbsp;open&nbsp;orders&nbsp;for&nbsp;the&nbsp;given<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset&nbsp;instead&nbsp;of&nbsp;all&nbsp;open&nbsp;orders.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+open_orders&nbsp;:&nbsp;dict[list[Order]]&nbsp;or&nbsp;list[Order]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;no&nbsp;asset&nbsp;is&nbsp;passed&nbsp;this&nbsp;will&nbsp;return&nbsp;a&nbsp;dict&nbsp;mapping&nbsp;Assets<br>
+&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;a&nbsp;list&nbsp;containing&nbsp;all&nbsp;the&nbsp;open&nbsp;orders&nbsp;for&nbsp;the&nbsp;asset.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;an&nbsp;asset&nbsp;is&nbsp;passed&nbsp;then&nbsp;this&nbsp;will&nbsp;return&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;open<br>
+&nbsp;&nbsp;&nbsp;&nbsp;orders&nbsp;for&nbsp;this&nbsp;asset.</tt></dd></dl>
+ <dl><dt><a name="-get_order"><strong>get_order</strong></a>(self, order_id)</dt><dd><tt>Lookup&nbsp;an&nbsp;order&nbsp;based&nbsp;on&nbsp;the&nbsp;order&nbsp;id&nbsp;returned&nbsp;from&nbsp;one&nbsp;of&nbsp;the<br>
+order&nbsp;functions.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order&nbsp;:&nbsp;Order<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;order&nbsp;<a href="builtins.html#object">object</a>.</tt></dd></dl>
+ <dl><dt><a name="-history"><strong>history</strong></a>(self, bar_count, frequency, field, ffill=True)</dt><dd><tt>DEPRECATED:&nbsp;use&nbsp;``data.history``&nbsp;instead.</tt></dd></dl>
+ <dl><dt><a name="-order"><strong>order</strong></a>(self, asset, amount, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;for&nbsp;a&nbsp;fixed&nbsp;number&nbsp;of&nbsp;shares.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;to&nbsp;be&nbsp;ordered.<br>
+amount&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;amount&nbsp;of&nbsp;shares&nbsp;to&nbsp;order.&nbsp;If&nbsp;``amount``&nbsp;is&nbsp;positive,&nbsp;this&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;buy&nbsp;or&nbsp;cover.&nbsp;If&nbsp;``amount``&nbsp;is&nbsp;negative,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;sell&nbsp;or&nbsp;short.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str&nbsp;or&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order,&nbsp;or&nbsp;None&nbsp;if&nbsp;no&nbsp;order&nbsp;was<br>
+&nbsp;&nbsp;&nbsp;&nbsp;placed.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+The&nbsp;``limit_price``&nbsp;and&nbsp;``stop_price``&nbsp;arguments&nbsp;provide&nbsp;shorthands&nbsp;for<br>
+passing&nbsp;common&nbsp;execution&nbsp;styles.&nbsp;Passing&nbsp;``limit_price=N``&nbsp;is<br>
+equivalent&nbsp;to&nbsp;``style=LimitOrder(N)``.&nbsp;Similarly,&nbsp;passing<br>
+``stop_price=M``&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;``style=StopOrder(M)``,&nbsp;and&nbsp;passing<br>
+``limit_price=N``&nbsp;and&nbsp;``stop_price=M``&nbsp;is&nbsp;equivalent&nbsp;to<br>
+``style=StopLimitOrder(N,&nbsp;M)``.&nbsp;It&nbsp;is&nbsp;an&nbsp;error&nbsp;to&nbsp;pass&nbsp;both&nbsp;a&nbsp;``style``<br>
+and&nbsp;``limit_price``&nbsp;or&nbsp;``stop_price``.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order_value`<br>
+:func:`zipline.api.order_percent`</tt></dd></dl>
+ <dl><dt><a name="-order_percent"><strong>order_percent</strong></a>(self, asset, percent, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;in&nbsp;the&nbsp;specified&nbsp;asset&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;given<br>
+percent&nbsp;of&nbsp;the&nbsp;current&nbsp;portfolio&nbsp;value.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;that&nbsp;this&nbsp;order&nbsp;is&nbsp;for.<br>
+percent&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;percentage&nbsp;of&nbsp;the&nbsp;portfolio&nbsp;value&nbsp;to&nbsp;allocate&nbsp;to&nbsp;``asset``.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;specified&nbsp;as&nbsp;a&nbsp;decimal,&nbsp;for&nbsp;example:&nbsp;0.50&nbsp;means&nbsp;50%.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_value`</tt></dd></dl>
+ <dl><dt><a name="-order_target"><strong>order_target</strong></a>(self, asset, target, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;to&nbsp;adjust&nbsp;a&nbsp;position&nbsp;to&nbsp;a&nbsp;target&nbsp;number&nbsp;of&nbsp;shares.&nbsp;If<br>
+the&nbsp;position&nbsp;doesn't&nbsp;already&nbsp;exist,&nbsp;this&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;placing&nbsp;a&nbsp;new<br>
+order.&nbsp;If&nbsp;the&nbsp;position&nbsp;does&nbsp;exist,&nbsp;this&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;placing&nbsp;an<br>
+order&nbsp;for&nbsp;the&nbsp;difference&nbsp;between&nbsp;the&nbsp;target&nbsp;number&nbsp;of&nbsp;shares&nbsp;and&nbsp;the<br>
+current&nbsp;number&nbsp;of&nbsp;shares.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;that&nbsp;this&nbsp;order&nbsp;is&nbsp;for.<br>
+target&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;desired&nbsp;number&nbsp;of&nbsp;shares&nbsp;of&nbsp;``asset``.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+``order_target``&nbsp;does&nbsp;not&nbsp;take&nbsp;into&nbsp;account&nbsp;any&nbsp;open&nbsp;orders.&nbsp;For<br>
+example:<br>
+&nbsp;<br>
+..&nbsp;code-block::&nbsp;python<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<a href="#-order_target">order_target</a>(<a href="#-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;&nbsp;&nbsp;<a href="#-order_target">order_target</a>(<a href="#-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;<br>
+This&nbsp;code&nbsp;will&nbsp;result&nbsp;in&nbsp;20&nbsp;shares&nbsp;of&nbsp;``<a href="#-sid">sid</a>(0)``&nbsp;because&nbsp;the&nbsp;first<br>
+call&nbsp;to&nbsp;``order_target``&nbsp;will&nbsp;not&nbsp;have&nbsp;been&nbsp;filled&nbsp;when&nbsp;the&nbsp;second<br>
+``order_target``&nbsp;call&nbsp;is&nbsp;made.<br>
+&nbsp;<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_target_percent`<br>
+:func:`zipline.api.order_target_value`</tt></dd></dl>
+ <dl><dt><a name="-order_target_percent"><strong>order_target_percent</strong></a>(self, asset, target, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;to&nbsp;adjust&nbsp;a&nbsp;position&nbsp;to&nbsp;a&nbsp;target&nbsp;percent&nbsp;of&nbsp;the<br>
+current&nbsp;portfolio&nbsp;value.&nbsp;If&nbsp;the&nbsp;position&nbsp;doesn't&nbsp;already&nbsp;exist,&nbsp;this&nbsp;is<br>
+equivalent&nbsp;to&nbsp;placing&nbsp;a&nbsp;new&nbsp;order.&nbsp;If&nbsp;the&nbsp;position&nbsp;does&nbsp;exist,&nbsp;this&nbsp;is<br>
+equivalent&nbsp;to&nbsp;placing&nbsp;an&nbsp;order&nbsp;for&nbsp;the&nbsp;difference&nbsp;between&nbsp;the&nbsp;target<br>
+percent&nbsp;and&nbsp;the&nbsp;current&nbsp;percent.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;that&nbsp;this&nbsp;order&nbsp;is&nbsp;for.<br>
+target&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;desired&nbsp;percentage&nbsp;of&nbsp;the&nbsp;portfolio&nbsp;value&nbsp;to&nbsp;allocate&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``asset``.&nbsp;This&nbsp;is&nbsp;specified&nbsp;as&nbsp;a&nbsp;decimal,&nbsp;for&nbsp;example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0.50&nbsp;means&nbsp;50%.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+``order_target_value``&nbsp;does&nbsp;not&nbsp;take&nbsp;into&nbsp;account&nbsp;any&nbsp;open&nbsp;orders.&nbsp;For<br>
+example:<br>
+&nbsp;<br>
+..&nbsp;code-block::&nbsp;python<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<a href="#-order_target_percent">order_target_percent</a>(<a href="#-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;&nbsp;&nbsp;<a href="#-order_target_percent">order_target_percent</a>(<a href="#-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;<br>
+This&nbsp;code&nbsp;will&nbsp;result&nbsp;in&nbsp;20%&nbsp;of&nbsp;the&nbsp;portfolio&nbsp;being&nbsp;allocated&nbsp;to&nbsp;<a href="#-sid">sid</a>(0)<br>
+because&nbsp;the&nbsp;first&nbsp;call&nbsp;to&nbsp;``order_target_percent``&nbsp;will&nbsp;not&nbsp;have&nbsp;been<br>
+filled&nbsp;when&nbsp;the&nbsp;second&nbsp;``order_target_percent``&nbsp;call&nbsp;is&nbsp;made.<br>
+&nbsp;<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_target`<br>
+:func:`zipline.api.order_target_value`</tt></dd></dl>
+ <dl><dt><a name="-order_target_value"><strong>order_target_value</strong></a>(self, asset, target, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;to&nbsp;adjust&nbsp;a&nbsp;position&nbsp;to&nbsp;a&nbsp;target&nbsp;value.&nbsp;If<br>
+the&nbsp;position&nbsp;doesn't&nbsp;already&nbsp;exist,&nbsp;this&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;placing&nbsp;a&nbsp;new<br>
+order.&nbsp;If&nbsp;the&nbsp;position&nbsp;does&nbsp;exist,&nbsp;this&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;placing&nbsp;an<br>
+order&nbsp;for&nbsp;the&nbsp;difference&nbsp;between&nbsp;the&nbsp;target&nbsp;value&nbsp;and&nbsp;the<br>
+current&nbsp;value.<br>
+If&nbsp;the&nbsp;Asset&nbsp;being&nbsp;ordered&nbsp;is&nbsp;a&nbsp;Future,&nbsp;the&nbsp;'target&nbsp;value'&nbsp;calculated<br>
+is&nbsp;actually&nbsp;the&nbsp;target&nbsp;exposure,&nbsp;as&nbsp;Futures&nbsp;have&nbsp;no&nbsp;'value'.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;that&nbsp;this&nbsp;order&nbsp;is&nbsp;for.<br>
+target&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;desired&nbsp;total&nbsp;value&nbsp;of&nbsp;``asset``.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+``order_target_value``&nbsp;does&nbsp;not&nbsp;take&nbsp;into&nbsp;account&nbsp;any&nbsp;open&nbsp;orders.&nbsp;For<br>
+example:<br>
+&nbsp;<br>
+..&nbsp;code-block::&nbsp;python<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<a href="#-order_target_value">order_target_value</a>(<a href="#-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;&nbsp;&nbsp;<a href="#-order_target_value">order_target_value</a>(<a href="#-sid">sid</a>(0),&nbsp;10)<br>
+&nbsp;<br>
+This&nbsp;code&nbsp;will&nbsp;result&nbsp;in&nbsp;20&nbsp;dollars&nbsp;of&nbsp;``<a href="#-sid">sid</a>(0)``&nbsp;because&nbsp;the&nbsp;first<br>
+call&nbsp;to&nbsp;``order_target_value``&nbsp;will&nbsp;not&nbsp;have&nbsp;been&nbsp;filled&nbsp;when&nbsp;the<br>
+second&nbsp;``order_target_value``&nbsp;call&nbsp;is&nbsp;made.<br>
+&nbsp;<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_target`<br>
+:func:`zipline.api.order_target_percent`</tt></dd></dl>
+ <dl><dt><a name="-order_value"><strong>order_value</strong></a>(self, asset, value, limit_price=None, stop_price=None, style=None)</dt><dd><tt>Place&nbsp;an&nbsp;order&nbsp;for&nbsp;a&nbsp;fixed&nbsp;amount&nbsp;of&nbsp;money.<br>
+&nbsp;<br>
+Equivalent&nbsp;to&nbsp;``<a href="#-order">order</a>(asset,&nbsp;value&nbsp;/&nbsp;data.current(asset,&nbsp;'price'))``.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;to&nbsp;be&nbsp;ordered.<br>
+value&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Amount&nbsp;of&nbsp;value&nbsp;of&nbsp;``asset``&nbsp;to&nbsp;be&nbsp;transacted.&nbsp;The&nbsp;number&nbsp;of&nbsp;shares<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bought&nbsp;or&nbsp;sold&nbsp;will&nbsp;be&nbsp;equal&nbsp;to&nbsp;``value&nbsp;/&nbsp;current_price``.<br>
+limit_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Limit&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+stop_price&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Stop&nbsp;price&nbsp;for&nbsp;the&nbsp;order.<br>
+style&nbsp;:&nbsp;ExecutionStyle<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;execution&nbsp;style&nbsp;for&nbsp;the&nbsp;order.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+order_id&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;identifier&nbsp;for&nbsp;this&nbsp;order.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+See&nbsp;:func:`zipline.api.order`&nbsp;for&nbsp;more&nbsp;information&nbsp;about<br>
+``limit_price``,&nbsp;``stop_price``,&nbsp;and&nbsp;``style``<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.execution.ExecutionStyle`<br>
+:func:`zipline.api.order`<br>
+:func:`zipline.api.order_percent`</tt></dd></dl>
+ <dl><dt><a name="-pipeline_output"><strong>pipeline_output</strong></a>(self, name)</dt><dd><tt>Get&nbsp;results&nbsp;of&nbsp;the&nbsp;pipeline&nbsp;attached&nbsp;by&nbsp;with&nbsp;name&nbsp;``name``.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;of&nbsp;the&nbsp;pipeline&nbsp;from&nbsp;which&nbsp;to&nbsp;fetch&nbsp;results.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+results&nbsp;:&nbsp;pd.DataFrame<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataFrame&nbsp;containing&nbsp;the&nbsp;results&nbsp;of&nbsp;the&nbsp;requested&nbsp;pipeline&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;current&nbsp;simulation&nbsp;date.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+NoSuchPipeline<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;no&nbsp;pipeline&nbsp;with&nbsp;the&nbsp;name&nbsp;`name`&nbsp;has&nbsp;been&nbsp;registered.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`zipline.api.attach_pipeline`<br>
+:meth:`zipline.pipeline.engine.PipelineEngine.run_pipeline`</tt></dd></dl>
+ <dl><dt><a name="-record"><strong>record</strong></a>(self, *args, **kwargs)</dt><dd><tt>Track&nbsp;and&nbsp;record&nbsp;values&nbsp;each&nbsp;day.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+**kwargs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;names&nbsp;and&nbsp;values&nbsp;to&nbsp;record.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+These&nbsp;values&nbsp;will&nbsp;appear&nbsp;in&nbsp;the&nbsp;performance&nbsp;packets&nbsp;and&nbsp;the&nbsp;performance<br>
+dataframe&nbsp;passed&nbsp;to&nbsp;``analyze``&nbsp;and&nbsp;returned&nbsp;from<br>
+:func:`~zipline.run_algorithm`.</tt></dd></dl>
+ <dl><dt><a name="-schedule_function"><strong>schedule_function</strong></a>(self, func, date_rule=None, time_rule=None, half_days=True, calendar=None)</dt><dd><tt>Schedule&nbsp;a&nbsp;function&nbsp;to&nbsp;be&nbsp;called&nbsp;repeatedly&nbsp;in&nbsp;the&nbsp;future.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+func&nbsp;:&nbsp;callable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;function&nbsp;to&nbsp;execute&nbsp;when&nbsp;the&nbsp;rule&nbsp;is&nbsp;triggered.&nbsp;``func``&nbsp;should<br>
+&nbsp;&nbsp;&nbsp;&nbsp;have&nbsp;the&nbsp;same&nbsp;signature&nbsp;as&nbsp;``handle_data``.<br>
+date_rule&nbsp;:&nbsp;zipline.utils.events.EventRule,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rule&nbsp;for&nbsp;the&nbsp;dates&nbsp;on&nbsp;which&nbsp;to&nbsp;execute&nbsp;``func``.&nbsp;If&nbsp;not<br>
+&nbsp;&nbsp;&nbsp;&nbsp;passed,&nbsp;the&nbsp;function&nbsp;will&nbsp;run&nbsp;every&nbsp;trading&nbsp;day.<br>
+time_rule&nbsp;:&nbsp;zipline.utils.events.EventRule,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rule&nbsp;for&nbsp;the&nbsp;time&nbsp;at&nbsp;which&nbsp;to&nbsp;execute&nbsp;``func``.&nbsp;If&nbsp;not&nbsp;passed,&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;will&nbsp;execute&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;first&nbsp;market&nbsp;minute&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;day.<br>
+half_days&nbsp;:&nbsp;bool,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Should&nbsp;this&nbsp;rule&nbsp;fire&nbsp;on&nbsp;half&nbsp;days?&nbsp;Default&nbsp;is&nbsp;True.<br>
+calendar&nbsp;:&nbsp;Sentinel,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Calendar&nbsp;used&nbsp;to&nbsp;compute&nbsp;rules&nbsp;that&nbsp;depend&nbsp;on&nbsp;the&nbsp;trading&nbsp;calendar.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.api.<a href="#date_rules">date_rules</a>`<br>
+:class:`zipline.api.<a href="#time_rules">time_rules</a>`</tt></dd></dl>
+ <dl><dt><a name="-set_asset_restrictions"><strong>set_asset_restrictions</strong></a>(self, restrictions, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;restriction&nbsp;on&nbsp;which&nbsp;assets&nbsp;can&nbsp;be&nbsp;ordered.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+restricted_list&nbsp;:&nbsp;<a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;<a href="builtins.html#object">object</a>&nbsp;providing&nbsp;information&nbsp;about&nbsp;restricted&nbsp;assets.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+zipline.finance.asset_restrictions.<a href="zipline.finance.asset_restrictions.html#Restrictions">Restrictions</a></tt></dd></dl>
+ <dl><dt><a name="-set_benchmark"><strong>set_benchmark</strong></a>(self, benchmark)</dt><dd><tt>Set&nbsp;the&nbsp;benchmark&nbsp;asset.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+benchmark&nbsp;:&nbsp;zipline.assets.Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;to&nbsp;set&nbsp;as&nbsp;the&nbsp;new&nbsp;benchmark.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+Any&nbsp;dividends&nbsp;payed&nbsp;out&nbsp;for&nbsp;that&nbsp;new&nbsp;benchmark&nbsp;asset&nbsp;will&nbsp;be<br>
+automatically&nbsp;reinvested.</tt></dd></dl>
+ <dl><dt><a name="-set_cancel_policy"><strong>set_cancel_policy</strong></a>(self, cancel_policy)</dt><dd><tt>Sets&nbsp;the&nbsp;order&nbsp;cancellation&nbsp;policy&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+cancel_policy&nbsp;:&nbsp;<a href="zipline.finance.cancel_policy.html#CancelPolicy">CancelPolicy</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;cancellation&nbsp;policy&nbsp;to&nbsp;use.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.api.<a href="#EODCancel">EODCancel</a>`<br>
+:class:`zipline.api.<a href="#NeverCancel">NeverCancel</a>`</tt></dd></dl>
+ <dl><dt><a name="-set_commission"><strong>set_commission</strong></a>(self, us_equities=None, us_futures=None)</dt><dd><tt>Sets&nbsp;the&nbsp;commission&nbsp;models&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+us_equities&nbsp;:&nbsp;EquityCommissionModel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;commission&nbsp;model&nbsp;to&nbsp;use&nbsp;for&nbsp;trading&nbsp;US&nbsp;equities.<br>
+us_futures&nbsp;:&nbsp;FutureCommissionModel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;commission&nbsp;model&nbsp;to&nbsp;use&nbsp;for&nbsp;trading&nbsp;US&nbsp;futures.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+This&nbsp;function&nbsp;can&nbsp;only&nbsp;be&nbsp;called&nbsp;during<br>
+:func:`~zipline.api.initialize`.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.commission.PerShare`<br>
+:class:`zipline.finance.commission.PerTrade`<br>
+:class:`zipline.finance.commission.PerDollar`</tt></dd></dl>
+ <dl><dt><a name="-set_do_not_order_list"><strong>set_do_not_order_list</strong></a>(self, restricted_list, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;restriction&nbsp;on&nbsp;which&nbsp;assets&nbsp;can&nbsp;be&nbsp;ordered.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+restricted_list&nbsp;:&nbsp;container[Asset],&nbsp;SecurityList<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;assets&nbsp;that&nbsp;cannot&nbsp;be&nbsp;ordered.</tt></dd></dl>
+ <dl><dt><a name="-set_long_only"><strong>set_long_only</strong></a>(self, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;rule&nbsp;specifying&nbsp;that&nbsp;this&nbsp;algorithm&nbsp;cannot&nbsp;take&nbsp;short<br>
+positions.</tt></dd></dl>
+ <dl><dt><a name="-set_max_leverage"><strong>set_max_leverage</strong></a>(self, max_leverage)</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;maximum&nbsp;leverage&nbsp;of&nbsp;the&nbsp;algorithm.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+max_leverage&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;leverage&nbsp;for&nbsp;the&nbsp;algorithm.&nbsp;If&nbsp;not&nbsp;provided&nbsp;there&nbsp;will<br>
+&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;no&nbsp;maximum.</tt></dd></dl>
+ <dl><dt><a name="-set_max_order_count"><strong>set_max_order_count</strong></a>(self, max_count, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;orders&nbsp;that&nbsp;can&nbsp;be&nbsp;placed&nbsp;in&nbsp;a&nbsp;single<br>
+day.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+max_count&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;number&nbsp;of&nbsp;orders&nbsp;that&nbsp;can&nbsp;be&nbsp;placed&nbsp;on&nbsp;any&nbsp;single&nbsp;day.</tt></dd></dl>
+ <dl><dt><a name="-set_max_order_size"><strong>set_max_order_size</strong></a>(self, asset=None, max_shares=None, max_notional=None, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;and/or&nbsp;dollar&nbsp;value&nbsp;of&nbsp;any&nbsp;single<br>
+order&nbsp;placed&nbsp;for&nbsp;sid.&nbsp;&nbsp;Limits&nbsp;are&nbsp;treated&nbsp;as&nbsp;absolute&nbsp;values&nbsp;and&nbsp;are<br>
+enforced&nbsp;at&nbsp;the&nbsp;time&nbsp;that&nbsp;the&nbsp;algo&nbsp;attempts&nbsp;to&nbsp;place&nbsp;an&nbsp;order&nbsp;for&nbsp;sid.<br>
+&nbsp;<br>
+If&nbsp;an&nbsp;algorithm&nbsp;attempts&nbsp;to&nbsp;place&nbsp;an&nbsp;order&nbsp;that&nbsp;would&nbsp;result&nbsp;in<br>
+exceeding&nbsp;one&nbsp;of&nbsp;these&nbsp;limits,&nbsp;raise&nbsp;a&nbsp;TradingControlException.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;provided,&nbsp;this&nbsp;sets&nbsp;the&nbsp;guard&nbsp;only&nbsp;on&nbsp;positions&nbsp;in&nbsp;the&nbsp;given<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset.<br>
+max_shares&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;number&nbsp;of&nbsp;shares&nbsp;that&nbsp;can&nbsp;be&nbsp;ordered&nbsp;at&nbsp;one&nbsp;time.<br>
+max_notional&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;value&nbsp;that&nbsp;can&nbsp;be&nbsp;ordered&nbsp;at&nbsp;one&nbsp;time.</tt></dd></dl>
+ <dl><dt><a name="-set_max_position_size"><strong>set_max_position_size</strong></a>(self, asset=None, max_shares=None, max_notional=None, on_error='fail')</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;number&nbsp;of&nbsp;shares&nbsp;and/or&nbsp;dollar&nbsp;value&nbsp;held&nbsp;for&nbsp;the<br>
+given&nbsp;sid.&nbsp;Limits&nbsp;are&nbsp;treated&nbsp;as&nbsp;absolute&nbsp;values&nbsp;and&nbsp;are&nbsp;enforced&nbsp;at<br>
+the&nbsp;time&nbsp;that&nbsp;the&nbsp;algo&nbsp;attempts&nbsp;to&nbsp;place&nbsp;an&nbsp;order&nbsp;for&nbsp;sid.&nbsp;This&nbsp;means<br>
+that&nbsp;it's&nbsp;possible&nbsp;to&nbsp;end&nbsp;up&nbsp;with&nbsp;more&nbsp;than&nbsp;the&nbsp;max&nbsp;number&nbsp;of&nbsp;shares<br>
+due&nbsp;to&nbsp;splits/dividends,&nbsp;and&nbsp;more&nbsp;than&nbsp;the&nbsp;max&nbsp;notional&nbsp;due&nbsp;to&nbsp;price<br>
+improvement.<br>
+&nbsp;<br>
+If&nbsp;an&nbsp;algorithm&nbsp;attempts&nbsp;to&nbsp;place&nbsp;an&nbsp;order&nbsp;that&nbsp;would&nbsp;result&nbsp;in<br>
+increasing&nbsp;the&nbsp;absolute&nbsp;value&nbsp;of&nbsp;shares/dollar&nbsp;value&nbsp;exceeding&nbsp;one&nbsp;of<br>
+these&nbsp;limits,&nbsp;raise&nbsp;a&nbsp;TradingControlException.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+asset&nbsp;:&nbsp;Asset,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;provided,&nbsp;this&nbsp;sets&nbsp;the&nbsp;guard&nbsp;only&nbsp;on&nbsp;positions&nbsp;in&nbsp;the&nbsp;given<br>
+&nbsp;&nbsp;&nbsp;&nbsp;asset.<br>
+max_shares&nbsp;:&nbsp;int,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;number&nbsp;of&nbsp;shares&nbsp;to&nbsp;hold&nbsp;for&nbsp;an&nbsp;asset.<br>
+max_notional&nbsp;:&nbsp;float,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;maximum&nbsp;value&nbsp;to&nbsp;hold&nbsp;for&nbsp;an&nbsp;asset.</tt></dd></dl>
+ <dl><dt><a name="-set_min_leverage"><strong>set_min_leverage</strong></a>(self, min_leverage, grace_period)</dt><dd><tt>Set&nbsp;a&nbsp;limit&nbsp;on&nbsp;the&nbsp;minimum&nbsp;leverage&nbsp;of&nbsp;the&nbsp;algorithm.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+min_leverage&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;minimum&nbsp;leverage&nbsp;for&nbsp;the&nbsp;algorithm.<br>
+grace_period&nbsp;:&nbsp;pd.Timedelta<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;offset&nbsp;from&nbsp;the&nbsp;start&nbsp;date&nbsp;used&nbsp;to&nbsp;enforce&nbsp;a&nbsp;minimum&nbsp;leverage.</tt></dd></dl>
+ <dl><dt><a name="-set_slippage"><strong>set_slippage</strong></a>(self, us_equities=None, us_futures=None)</dt><dd><tt>Set&nbsp;the&nbsp;slippage&nbsp;models&nbsp;for&nbsp;the&nbsp;simulation.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+us_equities&nbsp;:&nbsp;EquitySlippageModel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;slippage&nbsp;model&nbsp;to&nbsp;use&nbsp;for&nbsp;trading&nbsp;US&nbsp;equities.<br>
+us_futures&nbsp;:&nbsp;FutureSlippageModel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;slippage&nbsp;model&nbsp;to&nbsp;use&nbsp;for&nbsp;trading&nbsp;US&nbsp;futures.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+This&nbsp;function&nbsp;can&nbsp;only&nbsp;be&nbsp;called&nbsp;during<br>
+:func:`~zipline.api.initialize`.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:class:`zipline.finance.slippage.<a href="zipline.finance.slippage.html#SlippageModel">SlippageModel</a>`</tt></dd></dl>
+ <dl><dt><a name="-set_symbol_lookup_date"><strong>set_symbol_lookup_date</strong></a>(self, dt)</dt><dd><tt>Set&nbsp;the&nbsp;date&nbsp;for&nbsp;which&nbsp;symbols&nbsp;will&nbsp;be&nbsp;resolved&nbsp;to&nbsp;their&nbsp;assets<br>
+(symbols&nbsp;may&nbsp;map&nbsp;to&nbsp;different&nbsp;firms&nbsp;or&nbsp;underlying&nbsp;assets&nbsp;at<br>
+different&nbsp;times)<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+dt&nbsp;:&nbsp;datetime<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;new&nbsp;symbol&nbsp;lookup&nbsp;date.</tt></dd></dl>
+ <dl><dt><a name="-sid"><strong>sid</strong></a>(self, sid)</dt><dd><tt>Lookup&nbsp;an&nbsp;Asset&nbsp;by&nbsp;its&nbsp;unique&nbsp;asset&nbsp;identifier.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+sid&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;unique&nbsp;integer&nbsp;that&nbsp;identifies&nbsp;an&nbsp;asset.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+asset&nbsp;:&nbsp;zipline.assets.Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;with&nbsp;the&nbsp;given&nbsp;``sid``.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+SidsNotFound<br>
+&nbsp;&nbsp;&nbsp;&nbsp;When&nbsp;a&nbsp;requested&nbsp;``sid``&nbsp;does&nbsp;not&nbsp;map&nbsp;to&nbsp;any&nbsp;asset.</tt></dd></dl>
+ <dl><dt><a name="-symbol"><strong>symbol</strong></a>(self, symbol_str, country_code=None)</dt><dd><tt>Lookup&nbsp;an&nbsp;Equity&nbsp;by&nbsp;its&nbsp;ticker&nbsp;symbol.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+symbol_str&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;ticker&nbsp;symbol&nbsp;for&nbsp;the&nbsp;equity&nbsp;to&nbsp;lookup.<br>
+country_code&nbsp;:&nbsp;str&nbsp;or&nbsp;None,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;country&nbsp;to&nbsp;limit&nbsp;symbol&nbsp;searches&nbsp;to.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+equity&nbsp;:&nbsp;zipline.assets.Equity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;equity&nbsp;that&nbsp;held&nbsp;the&nbsp;ticker&nbsp;symbol&nbsp;on&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;symbol&nbsp;lookup&nbsp;date.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+SymbolNotFound<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;the&nbsp;symbols&nbsp;was&nbsp;not&nbsp;held&nbsp;on&nbsp;the&nbsp;current&nbsp;lookup&nbsp;date.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`zipline.api.set_symbol_lookup_date`</tt></dd></dl>
+ <dl><dt><a name="-symbols"><strong>symbols</strong></a>(self, *args, **kwargs)</dt><dd><tt>Lookup&nbsp;multuple&nbsp;Equities&nbsp;as&nbsp;a&nbsp;list.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+*args&nbsp;:&nbsp;iterable[str]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;ticker&nbsp;symbols&nbsp;to&nbsp;lookup.<br>
+country_code&nbsp;:&nbsp;str&nbsp;or&nbsp;None,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;country&nbsp;to&nbsp;limit&nbsp;symbol&nbsp;searches&nbsp;to.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+equities&nbsp;:&nbsp;list[zipline.assets.Equity]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;equities&nbsp;that&nbsp;held&nbsp;the&nbsp;given&nbsp;ticker&nbsp;symbols&nbsp;on&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;symbol&nbsp;lookup&nbsp;date.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+SymbolNotFound<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;when&nbsp;one&nbsp;of&nbsp;the&nbsp;symbols&nbsp;was&nbsp;not&nbsp;held&nbsp;on&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lookup&nbsp;date.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+:func:`zipline.api.set_symbol_lookup_date`</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>RESTRICTION_STATES</strong> = &lt;enum: ('ALLOWED', 'FROZEN')&gt;<br>
+<strong>__all__</strong> = ['EODCancel', 'FixedSlippage', 'FixedBasisPointsSlippage', 'NeverCancel', 'VolumeShareSlippage', 'Restriction', 'StaticRestrictions', 'HistoricalRestrictions', 'RESTRICTION_STATES', 'cancel_policy', 'commission', 'date_rules', 'events', 'execution', 'math_utils', 'slippage', 'time_rules', 'calendars', 'get_environment', 'fetch_csv', ...]</td></tr></table>
+</body></html>

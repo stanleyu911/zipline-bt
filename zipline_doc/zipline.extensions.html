@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module zipline.extensions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="zipline.html"><font color="#ffffff">zipline</font></a>.extensions</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cstanley%5Canaconda3%5Cenvs%5Czipline_36%5Clib%5Csite-packages%5Czipline%5Cextensions.py">c:\users\stanley\anaconda3\envs\zipline_36\lib\site-packages\zipline\extensions.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="six.html">six</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.extensions.html#Namespace">Namespace</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline.extensions.html#Registry">Registry</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Namespace">class <strong>Namespace</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;placeholder&nbsp;<a href="builtins.html#object">object</a>&nbsp;representing&nbsp;a&nbsp;namespace&nbsp;level<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Registry">class <strong>Registry</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Responsible&nbsp;for&nbsp;managing&nbsp;all&nbsp;instances&nbsp;of&nbsp;custom&nbsp;subclasses&nbsp;of&nbsp;a<br>
+given&nbsp;abstract&nbsp;base&nbsp;class&nbsp;-&nbsp;only&nbsp;one&nbsp;instance&nbsp;needs&nbsp;to&nbsp;be&nbsp;created<br>
+per&nbsp;abstract&nbsp;base&nbsp;class,&nbsp;and&nbsp;should&nbsp;be&nbsp;created&nbsp;through&nbsp;the<br>
+create_registry&nbsp;function/decorator.&nbsp;All&nbsp;management&nbsp;methods<br>
+for&nbsp;a&nbsp;given&nbsp;base&nbsp;class&nbsp;can&nbsp;be&nbsp;called&nbsp;through&nbsp;the&nbsp;global&nbsp;wrapper&nbsp;functions<br>
+rather&nbsp;than&nbsp;through&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;instance&nbsp;itself.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;abstract&nbsp;base&nbsp;class&nbsp;to&nbsp;manage.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Registry-__init__"><strong>__init__</strong></a>(self, interface)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Registry-clear"><strong>clear</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Registry-is_registered"><strong>is_registered</strong></a>(self, name)</dt><dd><tt>Check&nbsp;whether&nbsp;we&nbsp;have&nbsp;a&nbsp;factory&nbsp;registered&nbsp;under&nbsp;``name``.</tt></dd></dl>
+
+<dl><dt><a name="Registry-load"><strong>load</strong></a>(self, name)</dt><dd><tt>Construct&nbsp;an&nbsp;<a href="builtins.html#object">object</a>&nbsp;from&nbsp;a&nbsp;registered&nbsp;factory.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;with&nbsp;which&nbsp;the&nbsp;factory&nbsp;was&nbsp;registered.</tt></dd></dl>
+
+<dl><dt><a name="Registry-register"><strong>register</strong></a>(self='__no__default__', name='__no__default__', factory='__no__default__')</dt></dl>
+
+<dl><dt><a name="Registry-unregister"><strong>unregister</strong></a>(self, name)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-clear"><strong>clear</strong></a>(interface)</dt><dd><tt>Unregisters&nbsp;all&nbsp;current&nbsp;registered&nbsp;classes<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;base&nbsp;class&nbsp;for&nbsp;which&nbsp;to&nbsp;perform&nbsp;this&nbsp;operation</tt></dd></dl>
+ <dl><dt><a name="-create_args"><strong>create_args</strong></a>(args, root)</dt><dd><tt>Encapsulates&nbsp;a&nbsp;set&nbsp;of&nbsp;custom&nbsp;command&nbsp;line&nbsp;arguments&nbsp;in&nbsp;key=value<br>
+or&nbsp;key.namespace=value&nbsp;form&nbsp;into&nbsp;a&nbsp;chain&nbsp;of&nbsp;<a href="#Namespace">Namespace</a>&nbsp;objects,<br>
+where&nbsp;each&nbsp;next&nbsp;level&nbsp;is&nbsp;an&nbsp;attribute&nbsp;of&nbsp;the&nbsp;<a href="#Namespace">Namespace</a>&nbsp;<a href="builtins.html#object">object</a>&nbsp;on&nbsp;the<br>
+current&nbsp;level<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+args&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;strings&nbsp;representing&nbsp;arguments&nbsp;in&nbsp;key=value&nbsp;form<br>
+root&nbsp;:&nbsp;<a href="#Namespace">Namespace</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;top-level&nbsp;element&nbsp;of&nbsp;the&nbsp;argument&nbsp;tree</tt></dd></dl>
+ <dl><dt><a name="-create_registry"><strong>create_registry</strong></a>(interface)</dt><dd><tt>Create&nbsp;a&nbsp;new&nbsp;registry&nbsp;for&nbsp;an&nbsp;extensible&nbsp;interface.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;abstract&nbsp;data&nbsp;type&nbsp;for&nbsp;which&nbsp;to&nbsp;create&nbsp;a&nbsp;registry,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;which&nbsp;will&nbsp;manage&nbsp;registration&nbsp;of&nbsp;factories&nbsp;for&nbsp;this&nbsp;type.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;data&nbsp;type&nbsp;specified/decorated,&nbsp;unaltered.</tt></dd></dl>
+ <dl><dt><a name="-extensible"><strong>extensible</strong></a> = create_registry(interface)</dt><dd><tt>Create&nbsp;a&nbsp;new&nbsp;registry&nbsp;for&nbsp;an&nbsp;extensible&nbsp;interface.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;abstract&nbsp;data&nbsp;type&nbsp;for&nbsp;which&nbsp;to&nbsp;create&nbsp;a&nbsp;registry,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;which&nbsp;will&nbsp;manage&nbsp;registration&nbsp;of&nbsp;factories&nbsp;for&nbsp;this&nbsp;type.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;data&nbsp;type&nbsp;specified/decorated,&nbsp;unaltered.</tt></dd></dl>
+ <dl><dt><a name="-get_registry"><strong>get_registry</strong></a>(interface)</dt><dd><tt>Getter&nbsp;method&nbsp;for&nbsp;retrieving&nbsp;the&nbsp;registry<br>
+instance&nbsp;for&nbsp;a&nbsp;given&nbsp;extendable&nbsp;type<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;extendable&nbsp;type&nbsp;(base&nbsp;class)<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+manager&nbsp;:&nbsp;<a href="#Registry">Registry</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;corresponding&nbsp;registry</tt></dd></dl>
+ <dl><dt><a name="-load"><strong>load</strong></a>(interface, name)</dt><dd><tt>Retrieves&nbsp;a&nbsp;custom&nbsp;class&nbsp;whose&nbsp;name&nbsp;is&nbsp;given.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;base&nbsp;class&nbsp;for&nbsp;which&nbsp;to&nbsp;perform&nbsp;this&nbsp;operation<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;class&nbsp;to&nbsp;be&nbsp;retrieved.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+obj&nbsp;:&nbsp;<a href="builtins.html#object">object</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;instance&nbsp;of&nbsp;the&nbsp;desired&nbsp;class.</tt></dd></dl>
+ <dl><dt><a name="-parse_extension_arg"><strong>parse_extension_arg</strong></a>(arg, arg_dict)</dt><dd><tt>Converts&nbsp;argument&nbsp;strings&nbsp;in&nbsp;key=value&nbsp;or&nbsp;key.namespace=value&nbsp;form<br>
+to&nbsp;dictionary&nbsp;entries<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+arg&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;argument&nbsp;string&nbsp;to&nbsp;parse,&nbsp;which&nbsp;must&nbsp;be&nbsp;in&nbsp;key=value&nbsp;or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;key.namespace=value&nbsp;form.<br>
+arg_dict&nbsp;:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;dictionary&nbsp;into&nbsp;which&nbsp;the&nbsp;key/value&nbsp;pair&nbsp;will&nbsp;be&nbsp;added</tt></dd></dl>
+ <dl><dt><a name="-register"><strong>register</strong></a>(interface='__no__default__', name='__no__default__', custom_class='__no__default__')</dt><dd><tt>Registers&nbsp;a&nbsp;class&nbsp;for&nbsp;retrieval&nbsp;by&nbsp;the&nbsp;load&nbsp;method<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;base&nbsp;class&nbsp;for&nbsp;which&nbsp;to&nbsp;perform&nbsp;this&nbsp;operation<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;subclass<br>
+custom_class&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;class&nbsp;to&nbsp;register,&nbsp;which&nbsp;must&nbsp;be&nbsp;a&nbsp;subclass&nbsp;of&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;abstract&nbsp;base&nbsp;class&nbsp;in&nbsp;self.<strong>dtype</strong></tt></dd></dl>
+ <dl><dt><a name="-unregister"><strong>unregister</strong></a>(interface, name)</dt><dd><tt>If&nbsp;a&nbsp;class&nbsp;is&nbsp;registered&nbsp;with&nbsp;the&nbsp;given&nbsp;name,<br>
+it&nbsp;is&nbsp;unregistered.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+interface&nbsp;:&nbsp;type<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;base&nbsp;class&nbsp;for&nbsp;which&nbsp;to&nbsp;perform&nbsp;this&nbsp;operation<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;class&nbsp;to&nbsp;be&nbsp;unregistered.</tt></dd></dl>
+ <dl><dt><a name="-update_namespace"><strong>update_namespace</strong></a>(namespace, path, name)</dt><dd><tt>A&nbsp;recursive&nbsp;function&nbsp;that&nbsp;takes&nbsp;a&nbsp;root&nbsp;element,&nbsp;list&nbsp;of&nbsp;namespaces,<br>
+and&nbsp;the&nbsp;value&nbsp;being&nbsp;stored,&nbsp;and&nbsp;assigns&nbsp;namespaces&nbsp;to&nbsp;the&nbsp;root&nbsp;<a href="builtins.html#object">object</a><br>
+via&nbsp;a&nbsp;chain&nbsp;of&nbsp;<a href="#Namespace">Namespace</a>&nbsp;objects,&nbsp;connected&nbsp;through&nbsp;attributes<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+namespace&nbsp;:&nbsp;<a href="#Namespace">Namespace</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;<a href="builtins.html#object">object</a>&nbsp;onto&nbsp;which&nbsp;an&nbsp;attribute&nbsp;will&nbsp;be&nbsp;added<br>
+path&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;strings&nbsp;representing&nbsp;namespaces<br>
+name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;value&nbsp;to&nbsp;be&nbsp;stored&nbsp;at&nbsp;the&nbsp;bottom&nbsp;level</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>custom_types</strong> = {&lt;class 'zipline.finance.blotter.blotter.Blotter'&gt;: &lt;zipline.extensions.Registry object&gt;}</td></tr></table>
+</body></html>

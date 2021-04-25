@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module zipline._protocol</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="zipline.html"><font color="#ffffff">zipline</font></a>._protocol</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cstanley%5Canaconda3%5Cenvs%5Czipline_36%5Clib%5Csite-packages%5Czipline%5C_protocol.cp36-win_amd64.pyd">c:\users\stanley\anaconda3\envs\zipline_36\lib\site-packages\zipline\_protocol.cp36-win_amd64.pyd</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="builtins.html">builtins</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="warnings.html">warnings</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline._protocol.html#BarData">BarData</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline._protocol.html#InnerPosition">InnerPosition</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline._protocol.html#SidView">SidView</a>
+</font></dt><dt><font face="helvetica, arial"><a href="zipline._protocol.html#check_parameters">check_parameters</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BarData">class <strong>BarData</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Provides&nbsp;methods&nbsp;for&nbsp;accessing&nbsp;minutely&nbsp;and&nbsp;daily&nbsp;price/volume&nbsp;data&nbsp;from<br>
+Algorithm&nbsp;API&nbsp;functions.<br>
+&nbsp;<br>
+Also&nbsp;provides&nbsp;utility&nbsp;methods&nbsp;to&nbsp;determine&nbsp;if&nbsp;an&nbsp;asset&nbsp;is&nbsp;alive,&nbsp;and&nbsp;if&nbsp;it<br>
+has&nbsp;recent&nbsp;trade&nbsp;data.<br>
+&nbsp;<br>
+An&nbsp;instance&nbsp;of&nbsp;this&nbsp;<a href="builtins.html#object">object</a>&nbsp;is&nbsp;passed&nbsp;as&nbsp;``data``&nbsp;to<br>
+:func:`~zipline.api.handle_data`&nbsp;and<br>
+:func:`~zipline.api.before_trading_start`.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+data_portal&nbsp;:&nbsp;DataPortal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Provider&nbsp;for&nbsp;bar&nbsp;pricing&nbsp;data.<br>
+simulation_dt_func&nbsp;:&nbsp;callable<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Function&nbsp;which&nbsp;returns&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;usually&nbsp;bound&nbsp;to&nbsp;a&nbsp;method&nbsp;of&nbsp;TradingSimulation.<br>
+data_frequency&nbsp;:&nbsp;{'minute',&nbsp;'daily'}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;frequency&nbsp;of&nbsp;the&nbsp;bar&nbsp;data;&nbsp;i.e.&nbsp;whether&nbsp;the&nbsp;data&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;daily&nbsp;or&nbsp;minute&nbsp;bars<br>
+restrictions&nbsp;:&nbsp;zipline.finance.asset_restrictions.Restrictions<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Object&nbsp;that&nbsp;combines&nbsp;and&nbsp;returns&nbsp;restricted&nbsp;list&nbsp;information&nbsp;from<br>
+&nbsp;&nbsp;&nbsp;&nbsp;multiple&nbsp;sources<br>
+universe_func&nbsp;:&nbsp;callable,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Function&nbsp;which&nbsp;returns&nbsp;the&nbsp;current&nbsp;'universe'.&nbsp;&nbsp;This&nbsp;is&nbsp;for<br>
+&nbsp;&nbsp;&nbsp;&nbsp;backwards&nbsp;compatibility&nbsp;with&nbsp;older&nbsp;API&nbsp;concepts.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="BarData-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;key&nbsp;in&nbsp;self.</tt></dd></dl>
+
+<dl><dt><a name="BarData-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;self[key].</tt></dd></dl>
+
+<dl><dt><a name="BarData-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="BarData-__iter__"><strong>__iter__</strong></a>(self, /)</dt><dd><tt>Implement&nbsp;iter(self).</tt></dd></dl>
+
+<dl><dt><a name="BarData-__len__"><strong>__len__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;len(self).</tt></dd></dl>
+
+<dl><dt><a name="BarData-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="BarData-__reduce__"><strong>__reduce__</strong></a> = __reduce_cython__(...)</dt></dl>
+
+<dl><dt><a name="BarData-__setstate__"><strong>__setstate__</strong></a> = __setstate_cython__(...)</dt></dl>
+
+<dl><dt><a name="BarData-can_trade"><strong>can_trade</strong></a>(...)</dt><dd><tt>For&nbsp;the&nbsp;given&nbsp;asset&nbsp;or&nbsp;iterable&nbsp;of&nbsp;assets,&nbsp;returns&nbsp;True&nbsp;if&nbsp;all&nbsp;of&nbsp;the<br>
+following&nbsp;are&nbsp;true:<br>
+&nbsp;<br>
+1.&nbsp;The&nbsp;asset&nbsp;is&nbsp;alive&nbsp;for&nbsp;the&nbsp;session&nbsp;of&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time<br>
+&nbsp;&nbsp;&nbsp;(if&nbsp;current&nbsp;simulation&nbsp;time&nbsp;is&nbsp;not&nbsp;a&nbsp;market&nbsp;minute,&nbsp;we&nbsp;use&nbsp;the&nbsp;next<br>
+&nbsp;&nbsp;&nbsp;session).<br>
+2.&nbsp;The&nbsp;asset's&nbsp;exchange&nbsp;is&nbsp;open&nbsp;at&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time&nbsp;or&nbsp;at<br>
+&nbsp;&nbsp;&nbsp;the&nbsp;simulation&nbsp;calendar's&nbsp;next&nbsp;market&nbsp;minute.<br>
+3.&nbsp;There&nbsp;is&nbsp;a&nbsp;known&nbsp;last&nbsp;price&nbsp;for&nbsp;the&nbsp;asset.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+assets:&nbsp;zipline.assets.Asset&nbsp;or&nbsp;iterable&nbsp;of&nbsp;zipline.assets.Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Asset(s)&nbsp;for&nbsp;which&nbsp;tradability&nbsp;should&nbsp;be&nbsp;determined.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+The&nbsp;second&nbsp;condition&nbsp;above&nbsp;warrants&nbsp;some&nbsp;further&nbsp;explanation:<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;the&nbsp;asset's&nbsp;exchange&nbsp;calendar&nbsp;is&nbsp;identical&nbsp;to&nbsp;the&nbsp;simulation<br>
+&nbsp;&nbsp;calendar,&nbsp;then&nbsp;this&nbsp;condition&nbsp;always&nbsp;returns&nbsp;True.<br>
+-&nbsp;If&nbsp;there&nbsp;are&nbsp;market&nbsp;minutes&nbsp;in&nbsp;the&nbsp;simulation&nbsp;calendar&nbsp;outside&nbsp;of<br>
+&nbsp;&nbsp;this&nbsp;asset's&nbsp;exchange's&nbsp;trading&nbsp;hours&nbsp;(for&nbsp;example,&nbsp;if&nbsp;the&nbsp;simulation<br>
+&nbsp;&nbsp;is&nbsp;running&nbsp;on&nbsp;the&nbsp;CMES&nbsp;calendar&nbsp;but&nbsp;the&nbsp;asset&nbsp;is&nbsp;MSFT,&nbsp;which&nbsp;trades<br>
+&nbsp;&nbsp;on&nbsp;the&nbsp;NYSE),&nbsp;during&nbsp;those&nbsp;minutes,&nbsp;this&nbsp;condition&nbsp;will&nbsp;return&nbsp;False<br>
+&nbsp;&nbsp;(for&nbsp;example,&nbsp;3:15&nbsp;am&nbsp;Eastern&nbsp;on&nbsp;a&nbsp;weekday,&nbsp;during&nbsp;which&nbsp;the&nbsp;CMES&nbsp;is<br>
+&nbsp;&nbsp;open&nbsp;but&nbsp;the&nbsp;NYSE&nbsp;is&nbsp;closed).<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+can_trade&nbsp;:&nbsp;bool&nbsp;or&nbsp;pd.Series[bool]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Bool&nbsp;or&nbsp;series&nbsp;of&nbsp;bools&nbsp;indicating&nbsp;whether&nbsp;the&nbsp;requested&nbsp;asset(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;can&nbsp;be&nbsp;traded&nbsp;in&nbsp;the&nbsp;current&nbsp;minute.</tt></dd></dl>
+
+<dl><dt><a name="BarData-current"><strong>current</strong></a>(...)</dt><dd><tt>Returns&nbsp;the&nbsp;"current"&nbsp;value&nbsp;of&nbsp;the&nbsp;given&nbsp;fields&nbsp;for&nbsp;the&nbsp;given&nbsp;assets<br>
+at&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+assets&nbsp;:&nbsp;zipline.assets.Asset&nbsp;or&nbsp;iterable&nbsp;of&nbsp;zipline.assets.Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset(s)&nbsp;for&nbsp;which&nbsp;data&nbsp;is&nbsp;requested.<br>
+fields&nbsp;:&nbsp;str&nbsp;or&nbsp;iterable[str].<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Requested&nbsp;data&nbsp;field(s).&nbsp;Valid&nbsp;field&nbsp;names&nbsp;are:&nbsp;"price",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"last_traded",&nbsp;"open",&nbsp;"high",&nbsp;"low",&nbsp;"close",&nbsp;and&nbsp;"volume".<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+current_value&nbsp;:&nbsp;Scalar,&nbsp;pandas&nbsp;Series,&nbsp;or&nbsp;pandas&nbsp;DataFrame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;See&nbsp;notes&nbsp;below.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+The&nbsp;return&nbsp;type&nbsp;of&nbsp;this&nbsp;function&nbsp;depends&nbsp;on&nbsp;the&nbsp;types&nbsp;of&nbsp;its&nbsp;inputs:<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;a&nbsp;single&nbsp;asset&nbsp;and&nbsp;a&nbsp;single&nbsp;field&nbsp;are&nbsp;requested,&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;a&nbsp;scalar&nbsp;(either&nbsp;a&nbsp;float&nbsp;or&nbsp;a&nbsp;``pd.Timestamp``&nbsp;depending&nbsp;on<br>
+&nbsp;&nbsp;the&nbsp;field).<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;a&nbsp;single&nbsp;asset&nbsp;and&nbsp;a&nbsp;list&nbsp;of&nbsp;fields&nbsp;are&nbsp;requested,&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;a&nbsp;:class:`pd.Series`&nbsp;whose&nbsp;indices&nbsp;are&nbsp;the&nbsp;requested&nbsp;fields.<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;a&nbsp;list&nbsp;of&nbsp;assets&nbsp;and&nbsp;a&nbsp;single&nbsp;field&nbsp;are&nbsp;requested,&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;a&nbsp;:class:`pd.Series`&nbsp;whose&nbsp;indices&nbsp;are&nbsp;the&nbsp;assets.<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;a&nbsp;list&nbsp;of&nbsp;assets&nbsp;and&nbsp;a&nbsp;list&nbsp;of&nbsp;fields&nbsp;are&nbsp;requested,&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;a&nbsp;:class:`pd.DataFrame`.&nbsp;&nbsp;The&nbsp;columns&nbsp;of&nbsp;the&nbsp;returned&nbsp;frame<br>
+&nbsp;&nbsp;will&nbsp;be&nbsp;the&nbsp;requested&nbsp;fields,&nbsp;and&nbsp;the&nbsp;index&nbsp;of&nbsp;the&nbsp;frame&nbsp;will&nbsp;be&nbsp;the<br>
+&nbsp;&nbsp;requested&nbsp;assets.<br>
+&nbsp;<br>
+The&nbsp;values&nbsp;produced&nbsp;for&nbsp;``fields``&nbsp;are&nbsp;as&nbsp;follows:<br>
+&nbsp;<br>
+-&nbsp;Requesting&nbsp;"price"&nbsp;produces&nbsp;the&nbsp;last&nbsp;known&nbsp;close&nbsp;price&nbsp;for&nbsp;the&nbsp;asset,<br>
+&nbsp;&nbsp;forward-filled&nbsp;from&nbsp;an&nbsp;earlier&nbsp;minute&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;trade&nbsp;this<br>
+&nbsp;&nbsp;minute.&nbsp;If&nbsp;there&nbsp;is&nbsp;no&nbsp;last&nbsp;known&nbsp;value&nbsp;(either&nbsp;because&nbsp;the&nbsp;asset<br>
+&nbsp;&nbsp;has&nbsp;never&nbsp;traded,&nbsp;or&nbsp;because&nbsp;it&nbsp;has&nbsp;delisted)&nbsp;NaN&nbsp;is&nbsp;returned.&nbsp;If&nbsp;a<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;found,&nbsp;and&nbsp;we&nbsp;had&nbsp;to&nbsp;cross&nbsp;an&nbsp;adjustment&nbsp;boundary&nbsp;(split,<br>
+&nbsp;&nbsp;dividend,&nbsp;etc)&nbsp;to&nbsp;get&nbsp;it,&nbsp;the&nbsp;value&nbsp;is&nbsp;adjusted&nbsp;to&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;simulation&nbsp;time&nbsp;before&nbsp;being&nbsp;returned.<br>
+&nbsp;<br>
+-&nbsp;Requesting&nbsp;"open",&nbsp;"high",&nbsp;"low",&nbsp;or&nbsp;"close"&nbsp;produces&nbsp;the&nbsp;open,&nbsp;high,<br>
+&nbsp;&nbsp;low,&nbsp;or&nbsp;close&nbsp;for&nbsp;the&nbsp;current&nbsp;minute.&nbsp;If&nbsp;no&nbsp;trades&nbsp;occurred&nbsp;this<br>
+&nbsp;&nbsp;minute,&nbsp;``NaN``&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+-&nbsp;Requesting&nbsp;"volume"&nbsp;produces&nbsp;the&nbsp;trade&nbsp;volume&nbsp;for&nbsp;the&nbsp;current<br>
+&nbsp;&nbsp;minute.&nbsp;If&nbsp;no&nbsp;trades&nbsp;occurred&nbsp;this&nbsp;minute,&nbsp;0&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+-&nbsp;Requesting&nbsp;"last_traded"&nbsp;produces&nbsp;the&nbsp;datetime&nbsp;of&nbsp;the&nbsp;last&nbsp;minute&nbsp;in<br>
+&nbsp;&nbsp;which&nbsp;the&nbsp;asset&nbsp;traded,&nbsp;even&nbsp;if&nbsp;the&nbsp;asset&nbsp;has&nbsp;stopped&nbsp;trading.&nbsp;If<br>
+&nbsp;&nbsp;there&nbsp;is&nbsp;no&nbsp;last&nbsp;known&nbsp;value,&nbsp;``pd.NaT``&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;market&nbsp;time&nbsp;for&nbsp;an&nbsp;asset,<br>
+we&nbsp;use&nbsp;the&nbsp;most&nbsp;recent&nbsp;market&nbsp;close&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="BarData-current_chain"><strong>current_chain</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="BarData-history"><strong>history</strong></a>(...)</dt><dd><tt>Returns&nbsp;a&nbsp;trailing&nbsp;window&nbsp;of&nbsp;length&nbsp;``bar_count``&nbsp;containing&nbsp;data&nbsp;for<br>
+the&nbsp;given&nbsp;assets,&nbsp;fields,&nbsp;and&nbsp;frequency.<br>
+&nbsp;<br>
+Returned&nbsp;data&nbsp;is&nbsp;adjusted&nbsp;for&nbsp;splits,&nbsp;dividends,&nbsp;and&nbsp;mergers&nbsp;as&nbsp;of&nbsp;the<br>
+current&nbsp;simulation&nbsp;time.<br>
+&nbsp;<br>
+The&nbsp;semantics&nbsp;for&nbsp;missing&nbsp;data&nbsp;are&nbsp;identical&nbsp;to&nbsp;the&nbsp;ones&nbsp;described&nbsp;in<br>
+the&nbsp;notes&nbsp;for&nbsp;:meth:`current`.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+assets:&nbsp;zipline.assets.Asset&nbsp;or&nbsp;iterable&nbsp;of&nbsp;zipline.assets.Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset(s)&nbsp;for&nbsp;which&nbsp;data&nbsp;is&nbsp;requested.<br>
+fields:&nbsp;string&nbsp;or&nbsp;iterable&nbsp;of&nbsp;string.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Requested&nbsp;data&nbsp;field(s).&nbsp;Valid&nbsp;field&nbsp;names&nbsp;are:&nbsp;"price",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"last_traded",&nbsp;"open",&nbsp;"high",&nbsp;"low",&nbsp;"close",&nbsp;and&nbsp;"volume".<br>
+bar_count:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;data&nbsp;observations&nbsp;requested.<br>
+frequency:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;indicating&nbsp;whether&nbsp;to&nbsp;load&nbsp;daily&nbsp;or&nbsp;minutely&nbsp;data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;observations.&nbsp;Pass&nbsp;'1m'&nbsp;for&nbsp;minutely&nbsp;data,&nbsp;'1d'&nbsp;for&nbsp;daily&nbsp;data.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+history&nbsp;:&nbsp;pd.Series&nbsp;or&nbsp;pd.DataFrame&nbsp;or&nbsp;pd.Panel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;See&nbsp;notes&nbsp;below.<br>
+&nbsp;<br>
+Notes<br>
+-----<br>
+The&nbsp;return&nbsp;type&nbsp;of&nbsp;this&nbsp;function&nbsp;depends&nbsp;on&nbsp;the&nbsp;types&nbsp;of&nbsp;``assets``&nbsp;and<br>
+``fields``:<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;a&nbsp;single&nbsp;asset&nbsp;and&nbsp;a&nbsp;single&nbsp;field&nbsp;are&nbsp;requested,&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;a&nbsp;:class:`pd.Series`&nbsp;of&nbsp;length&nbsp;``bar_count``&nbsp;whose&nbsp;index&nbsp;is<br>
+&nbsp;&nbsp;:class:`pd.DatetimeIndex`.<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;a&nbsp;single&nbsp;asset&nbsp;and&nbsp;multiple&nbsp;fields&nbsp;are&nbsp;requested,&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;a&nbsp;:class:`pd.DataFrame`&nbsp;with&nbsp;shape<br>
+&nbsp;&nbsp;``(bar_count,&nbsp;len(fields))``.&nbsp;The&nbsp;frame's&nbsp;index&nbsp;will&nbsp;be&nbsp;a<br>
+&nbsp;&nbsp;:class:`pd.DatetimeIndex`,&nbsp;and&nbsp;its&nbsp;columns&nbsp;will&nbsp;be&nbsp;``fields``.<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;multiple&nbsp;assets&nbsp;and&nbsp;a&nbsp;single&nbsp;field&nbsp;are&nbsp;requested,&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;a&nbsp;:class:`pd.DataFrame`&nbsp;with&nbsp;shape<br>
+&nbsp;&nbsp;``(bar_count,&nbsp;len(assets))``.&nbsp;The&nbsp;frame's&nbsp;index&nbsp;will&nbsp;be&nbsp;a<br>
+&nbsp;&nbsp;:class:`pd.DatetimeIndex`,&nbsp;and&nbsp;its&nbsp;columns&nbsp;will&nbsp;be&nbsp;``assets``.<br>
+&nbsp;<br>
+-&nbsp;If&nbsp;multiple&nbsp;assets&nbsp;and&nbsp;multiple&nbsp;fields&nbsp;are&nbsp;requested,&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;value&nbsp;is&nbsp;a&nbsp;:class:`pd.Panel`&nbsp;with&nbsp;shape<br>
+&nbsp;&nbsp;``(len(fields),&nbsp;bar_count,&nbsp;len(assets))``.&nbsp;The&nbsp;axes&nbsp;of&nbsp;the&nbsp;returned<br>
+&nbsp;&nbsp;panel&nbsp;will&nbsp;be:<br>
+&nbsp;<br>
+&nbsp;&nbsp;-&nbsp;``panel.items``&nbsp;:&nbsp;``fields``<br>
+&nbsp;&nbsp;-&nbsp;``panel.major_axis``&nbsp;:&nbsp;:class:`pd.DatetimeIndex`&nbsp;of&nbsp;length&nbsp;``bar_count``<br>
+&nbsp;&nbsp;-&nbsp;``panel.minor_axis``&nbsp;:&nbsp;``assets``<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;market&nbsp;time,&nbsp;we&nbsp;use&nbsp;the<br>
+last&nbsp;market&nbsp;close&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="BarData-is_stale"><strong>is_stale</strong></a>(...)</dt><dd><tt>For&nbsp;the&nbsp;given&nbsp;asset&nbsp;or&nbsp;iterable&nbsp;of&nbsp;assets,&nbsp;returns&nbsp;True&nbsp;if&nbsp;the&nbsp;asset<br>
+is&nbsp;alive&nbsp;and&nbsp;there&nbsp;is&nbsp;no&nbsp;trade&nbsp;data&nbsp;for&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;asset&nbsp;has&nbsp;never&nbsp;traded,&nbsp;returns&nbsp;False.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time&nbsp;is&nbsp;not&nbsp;a&nbsp;valid&nbsp;market&nbsp;time,&nbsp;we&nbsp;use&nbsp;the<br>
+current&nbsp;time&nbsp;to&nbsp;check&nbsp;if&nbsp;the&nbsp;asset&nbsp;is&nbsp;alive,&nbsp;but&nbsp;we&nbsp;use&nbsp;the&nbsp;last<br>
+market&nbsp;minute/day&nbsp;for&nbsp;the&nbsp;trade&nbsp;data&nbsp;check.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+assets:&nbsp;zipline.assets.Asset&nbsp;or&nbsp;iterable&nbsp;of&nbsp;zipline.assets.Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Asset(s)&nbsp;for&nbsp;which&nbsp;staleness&nbsp;should&nbsp;be&nbsp;determined.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+is_stale&nbsp;:&nbsp;bool&nbsp;or&nbsp;pd.Series[bool]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Bool&nbsp;or&nbsp;series&nbsp;of&nbsp;bools&nbsp;indicating&nbsp;whether&nbsp;the&nbsp;requested&nbsp;asset(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;are&nbsp;stale.</tt></dd></dl>
+
+<dl><dt><a name="BarData-items"><strong>items</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="BarData-iteritems"><strong>iteritems</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="BarData-iterkeys"><strong>iterkeys</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="BarData-keys"><strong>keys</strong></a>(...)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>current_dt</strong></dt>
+</dl>
+<dl><dt><strong>current_session</strong></dt>
+</dl>
+<dl><dt><strong>current_session_minutes</strong></dt>
+</dl>
+<dl><dt><strong>fetcher_assets</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__pyx_vtable__</strong> = &lt;capsule object NULL&gt;</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="InnerPosition">class <strong>InnerPosition</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;real&nbsp;values&nbsp;of&nbsp;a&nbsp;position.<br>
+&nbsp;<br>
+This&nbsp;exists&nbsp;to&nbsp;be&nbsp;owned&nbsp;by&nbsp;both&nbsp;a<br>
+:class:`zipline.finance.position.Position`&nbsp;and&nbsp;a<br>
+:class:`zipline.protocol.Position`&nbsp;at&nbsp;the&nbsp;same&nbsp;time&nbsp;without&nbsp;a&nbsp;cycle.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="InnerPosition-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="InnerPosition-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="InnerPosition-__reduce__"><strong>__reduce__</strong></a> = __reduce_cython__(...)</dt></dl>
+
+<dl><dt><a name="InnerPosition-__repr__"><strong>__repr__</strong></a>(self, /)</dt><dd><tt>Return&nbsp;repr(self).</tt></dd></dl>
+
+<dl><dt><a name="InnerPosition-__setstate__"><strong>__setstate__</strong></a> = __setstate_cython__(...)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>amount</strong></dt>
+</dl>
+<dl><dt><strong>asset</strong></dt>
+</dl>
+<dl><dt><strong>cost_basis</strong></dt>
+</dl>
+<dl><dt><strong>last_sale_date</strong></dt>
+</dl>
+<dl><dt><strong>last_sale_price</strong></dt>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SidView">class <strong>SidView</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SidView-__contains__"><strong>__contains__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;key&nbsp;in&nbsp;self.</tt></dd></dl>
+
+<dl><dt><a name="SidView-__getattr__"><strong>__getattr__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="SidView-__getattribute__"><strong>__getattribute__</strong></a>(self, name, /)</dt><dd><tt>Return&nbsp;getattr(self,&nbsp;name).</tt></dd></dl>
+
+<dl><dt><a name="SidView-__getitem__"><strong>__getitem__</strong></a>(self, key, /)</dt><dd><tt>Return&nbsp;self[key].</tt></dd></dl>
+
+<dl><dt><a name="SidView-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>Parameters<br>
+---------<br>
+asset&nbsp;:&nbsp;Asset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;asset&nbsp;for&nbsp;which&nbsp;the&nbsp;instance&nbsp;retrieves&nbsp;data.<br>
+&nbsp;<br>
+data_portal&nbsp;:&nbsp;DataPortal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Provider&nbsp;for&nbsp;bar&nbsp;pricing&nbsp;data.<br>
+&nbsp;<br>
+simulation_dt_func:&nbsp;function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Function&nbsp;which&nbsp;returns&nbsp;the&nbsp;current&nbsp;simulation&nbsp;time.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;usually&nbsp;bound&nbsp;to&nbsp;a&nbsp;method&nbsp;of&nbsp;TradingSimulation.<br>
+&nbsp;<br>
+data_frequency:&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;frequency&nbsp;of&nbsp;the&nbsp;bar&nbsp;data;&nbsp;i.e.&nbsp;whether&nbsp;the&nbsp;data&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'daily'&nbsp;or&nbsp;'minute'&nbsp;bars</tt></dd></dl>
+
+<dl><dt><a name="SidView-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="SidView-__reduce__"><strong>__reduce__</strong></a> = __reduce_cython__(...)</dt></dl>
+
+<dl><dt><a name="SidView-__setstate__"><strong>__setstate__</strong></a> = __setstate_cython__(...)</dt></dl>
+
+<dl><dt><a name="SidView-mavg"><strong>mavg</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="SidView-returns"><strong>returns</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="SidView-stddev"><strong>stddev</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="SidView-vwap"><strong>vwap</strong></a>(...)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>current_dt</strong></dt>
+</dl>
+<dl><dt><strong>datetime</strong></dt>
+</dl>
+<dl><dt><strong>dt</strong></dt>
+</dl>
+<dl><dt><strong>sid</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__pyx_vtable__</strong> = &lt;capsule object NULL&gt;</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="check_parameters">class <strong>check_parameters</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Asserts&nbsp;that&nbsp;the&nbsp;keywords&nbsp;passed&nbsp;into&nbsp;the&nbsp;wrapped&nbsp;function&nbsp;are&nbsp;included<br>
+in&nbsp;those&nbsp;passed&nbsp;into&nbsp;this&nbsp;decorator.&nbsp;If&nbsp;not,&nbsp;raise&nbsp;a&nbsp;TypeError&nbsp;with&nbsp;a<br>
+meaningful&nbsp;message,&nbsp;unlike&nbsp;the&nbsp;one&nbsp;Cython&nbsp;returns&nbsp;by&nbsp;default.<br>
+&nbsp;<br>
+Also&nbsp;asserts&nbsp;that&nbsp;the&nbsp;arguments&nbsp;passed&nbsp;into&nbsp;the&nbsp;wrapped&nbsp;function&nbsp;are<br>
+consistent&nbsp;with&nbsp;the&nbsp;types&nbsp;passed&nbsp;into&nbsp;this&nbsp;decorator.&nbsp;If&nbsp;not,&nbsp;raise&nbsp;a<br>
+TypeError&nbsp;with&nbsp;a&nbsp;meaningful&nbsp;message.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="check_parameters-__call__"><strong>__call__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Call&nbsp;self&nbsp;as&nbsp;a&nbsp;function.</tt></dd></dl>
+
+<dl><dt><a name="check_parameters-__init__"><strong>__init__</strong></a>(self, /, *args, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="check_parameters-__new__"><strong>__new__</strong></a>(*args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="builtins.html#type">builtins.type</a></font></font></dt><dd><tt>Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;<a href="builtins.html#object">object</a>.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="check_parameters-__reduce__"><strong>__reduce__</strong></a> = __reduce_cython__(...)</dt></dl>
+
+<dl><dt><a name="check_parameters-__setstate__"><strong>__setstate__</strong></a> = __setstate_cython__(...)</dt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-handle_non_market_minutes"><strong>handle_non_market_minutes</strong></a>(...)</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>PY2</strong> = False<br>
+<strong>__test__</strong> = {}<br>
+<strong>string_types</strong> = (&lt;class 'str'&gt;,)</td></tr></table>
+</body></html>

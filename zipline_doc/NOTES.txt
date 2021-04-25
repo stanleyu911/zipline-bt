@@ -1,0 +1,5 @@
+These htmls are generated using pydoc in CLI
+
+e.g. 'pydoc zipline' will generate the html for zipline module
+e.g. 'pydoc zipline.api' will generate the html for zipline.zip module
+

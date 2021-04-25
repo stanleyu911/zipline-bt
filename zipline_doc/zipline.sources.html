@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: package zipline.sources</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="zipline.html"><font color="#ffffff">zipline</font></a>.sources</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cstanley%5Canaconda3%5Cenvs%5Czipline_36%5Clib%5Csite-packages%5Czipline%5Csources%5C__init__.py">c:\users\stanley\anaconda3\envs\zipline_36\lib\site-packages\zipline\sources\__init__.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="zipline.sources.benchmark_source.html">benchmark_source</a><br>
+</td><td width="25%" valign=top><a href="zipline.sources.requests_csv.html">requests_csv</a><br>
+</td><td width="25%" valign=top><a href="zipline.sources.test_source.html">test_source</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="zipline.sources.test_source.html#SpecificEquityTrades">zipline.sources.test_source.SpecificEquityTrades</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SpecificEquityTrades">class <strong>SpecificEquityTrades</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Yields&nbsp;all&nbsp;events&nbsp;in&nbsp;event_list&nbsp;that&nbsp;match&nbsp;the&nbsp;given&nbsp;sid_filter.<br>
+If&nbsp;no&nbsp;event_list&nbsp;is&nbsp;specified,&nbsp;generates&nbsp;an&nbsp;internal&nbsp;stream&nbsp;of&nbsp;events<br>
+to&nbsp;filter.&nbsp;&nbsp;Returns&nbsp;all&nbsp;events&nbsp;if&nbsp;filter&nbsp;is&nbsp;None.<br>
+&nbsp;<br>
+Configuration&nbsp;options:<br>
+&nbsp;<br>
+count&nbsp;&nbsp;:&nbsp;integer&nbsp;representing&nbsp;number&nbsp;of&nbsp;trades<br>
+sids&nbsp;&nbsp;&nbsp;:&nbsp;list&nbsp;of&nbsp;values&nbsp;representing&nbsp;simulated&nbsp;internal&nbsp;sids<br>
+start&nbsp;&nbsp;:&nbsp;start&nbsp;date<br>
+delta&nbsp;&nbsp;:&nbsp;timedelta&nbsp;between&nbsp;internal&nbsp;events<br>
+filter&nbsp;:&nbsp;filter&nbsp;to&nbsp;remove&nbsp;the&nbsp;sids<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SpecificEquityTrades-__init__"><strong>__init__</strong></a>(self, trading_calendar, asset_finder, sids, start, end, delta, count=500)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="SpecificEquityTrades-__iter__"><strong>__iter__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SpecificEquityTrades-__next__"><strong>__next__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SpecificEquityTrades-create_fresh_generator"><strong>create_fresh_generator</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SpecificEquityTrades-next"><strong>next</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SpecificEquityTrades-rewind"><strong>rewind</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SpecificEquityTrades-update_source_id"><strong>update_source_id</strong></a>(self, gen)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['SpecificEquityTrades']</td></tr></table>
+</body></html>
